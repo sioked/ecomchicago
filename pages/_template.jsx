@@ -3,7 +3,9 @@ import { Container } from 'react-responsive-grid'
 import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
 import Headroom from 'react-headroom'
+import { config } from 'config'
 import '../css/markdown-styles'
+import '../css/main';
 
 import { rhythm } from '../utils/typography'
 
@@ -15,42 +17,48 @@ module.exports = React.createClass({
   },
   render () {
     return (
-      <div>
+      <div
+        style={{
+          position: 'relative',
+        }}
+      >
         <Headroom
           wrapperStyle={{
             marginBottom: rhythm(1),
+            position: 'absolute',
+            width: '100%',
+            color: '#fff',
           }}
           style={{
-            background: 'lightgray',
+            background: 'rgba(0,0,0,0.5)',
+            padding: `${rhythm(1)} ${rhythm(3/4)}`,
+
           }}
         >
-          <Container
+          <div
             style={{
-              maxWidth: 960,
-              paddingTop: 0,
-              padding: `${rhythm(1)} ${rhythm(3/4)}`,
+              padding: `0 ${rhythm(3/4)}`,
+              maxWidth: '100%',
             }}
           >
             <Link
               to={prefixLink('/')}
               style={{
-                color: 'black',
+                color: '#fff',
                 textDecoration: 'none',
               }}
             >
-              Gatsby!!!
+                {config.siteTitle}
             </Link>
-          </Container>
+          </div>
         </Headroom>
-        <Container
+        <div
           style={{
-            maxWidth: 960,
-            padding: `${rhythm(1)} ${rhythm(3/4)}`,
-            paddingTop: 0,
+            paddingTop: `0`
           }}
         >
           {this.props.children}
-        </Container>
+        </div>
       </div>
     )
   },

@@ -7,7 +7,7 @@ import CodePlugin from 'typography-plugin-code'
 const options = {
   googleFonts: [
     {
-      name: 'Montserrat',
+      name: 'Source Sans Pro',
       styles: [
         '700',
       ],
@@ -21,9 +21,9 @@ const options = {
       ],
     },
   ],
-  headerFontFamily: ['Montserrat', 'sans-serif'],
-  bodyFontFamily: ['Arvo', 'sans-serif'],
-  baseFontSize: '18px',
+  headerFontFamily: ['Source Sans Pro', 'Helvetica', 'sans-serif'],
+  bodyFontFamily: ['Source Sans Pro', 'Helvetica', 'sans-serif'],
+  baseFontSize: '16px',
   baseLineHeight: 1.65,
   scaleRatio: 2.25,
   plugins: [
