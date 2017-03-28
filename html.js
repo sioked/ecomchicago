@@ -3,7 +3,9 @@ import Helmet from 'react-helmet'
 
 import { prefixLink } from 'gatsby-helpers'
 import { TypographyStyle, GoogleFont } from 'react-typography'
+import injectTapEventPlugin from 'react-tap-event-plugin';
 import typography from './utils/typography'
+injectTapEventPlugin();
 
 const BUILD_TIME = new Date().getTime()
 

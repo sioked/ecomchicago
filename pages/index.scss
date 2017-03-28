@@ -5,6 +5,7 @@
 // #FFF1D0
 // #DD1C1A
 
+$light-text: #e9e9e9;
 
 #primary-banner {
   height: 550px;
@@ -17,7 +18,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  color: #fff;
+  color: $light-text;
   padding-top: 80px;
 }
 
@@ -45,12 +46,31 @@
 
 .section {
   padding-top: 2em;
+  padding-bottom: 2em;
   min-height: 600px;
 }
 
 .section > *{
   max-width: 1000px;
   margin: 0 auto;
+}
+
+.photo-1 {
+  width: 350px;
+}
+.image-section-container {
+  display: flex;
+  flex-direction: row;
+}
+.section-image {
+  width: 350px;
+  flex-shrink:0;
+  margin-right: 4rem;
+  display: flex;
+  img {
+    box-shadow: 2px 5px 8px rgba(0,0,0,0.5);
+    align-self: center;
+  }
 }
 
 $ribbon-red: #DD1C1A;
@@ -61,14 +81,14 @@ $ribbon-red: #DD1C1A;
  width: 50%;
  position: relative;
  background: $ribbon-red;
- color: #fff;
+ color: $light-text;
  text-align: center;
  padding: 1em 2em; /* Adjust to suit */
  margin: 2em auto 0em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
 }
 
 .ribbon a {
-  color: #fff;;
+  color: $light-text;
 }
 
 .ribbon:before, .ribbon:after {
@@ -119,33 +139,38 @@ $ribbon-red: #DD1C1A;
 
 #details {
   background-color: #086788;
-  color: #fff;
+  color: $light-text;
 }
 
 .detail-row {
+  margin-top: 2rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-
-.detail-section {
-  width: 48%;
-
+.detail-row.header-section {
+  flex-direction: column;
 }
+.detail-row.header-section h2 {
+  text-align: center;
+}
+
 .callout {
   background-color: #F0C808;
   border: 1px solid #AAA;
   border-radius: 8px;
+  box-shadow: 2px 5px 8px rgba(0,0,0,0.5);
   padding: 1.5rem 1rem;
   font-size: 2rem;
-  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
   text-align: center;
   h3 {
     margin-bottom: 0px;
   }
   a {
-    color: black;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    color: #333;
     text-decoration: none;
   }
 }
@@ -154,13 +179,24 @@ $ribbon-red: #DD1C1A;
   background-color: #fff;
   color: white;
 }
+#section3 .image-section-container {
+  flex-direction: row-reverse;
+}
+#section3 .section-image {
+  margin-right: 0px;
+  margin-left: 4rem;
+  width: 450px;
+}
 
 .box-container {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 .box {
   background-color: #01AA9D;
+  color: #fff;
   padding: 1em;
-  width: 48%;
+  box-shadow: 2px 5px 8px rgba(0,0,0,0.5);
+  margin-bottom: 2rem;
 }

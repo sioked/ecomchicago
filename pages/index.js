@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
 import Helmet from 'react-helmet'
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
 import { config } from 'config'
 import './index.scss';
 
@@ -30,45 +32,76 @@ export default class Index extends React.Component {
         </div>
       </div>
       <div id="details" className="section">
+        <div className="container image-section-container">
+          <div className="section-image">
+            <img
+              className="photo-1"
+              src="/images/section-photo-1.jpg"
+            />
+          </div>
+          <div className="content-container">
+            <div className="detail-row header-section">
+              <h2>A 2-day Conference for Online Store Owners and Marketplace Sellers of All Levels!</h2>
+              <p>Stay tuned and mark your calendars for eCom Chicago 2017. It's guaranteed to be 2 jam-packed days of learning that you can use to start, grow, or streamline your online business.</p>
+            </div>
+
+            <div className="detail-row">
+              <div className="callout">
+                <h3>
+                  <a href="https://www.entrepreneur.com/article/288833" target="_blank">Recently Highlighted in Entrepreneur Magazine!</a>
+                </h3>
+              </div>
+            </div>
+
+            <div className="detail-row detail-row-flex">
+              <div className="detail-section">
+                <h2>Date:</h2>
+                <p>October 20th to October 21st, 2017</p>
+              </div>
+              <div className="detail-section">
+                <h2>Location:</h2>
+                <p>Belvedere Banquets and Events
+                  <br/>
+                  1170 W. Devon Ave.
+                  <br/>
+                  Elk Grove Village, IL 60007
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        {/*
         <div className="detail-row">
-          <div className="detail-section">
-            <h2>Date:</h2>
-            <p>October 20th to October 21st, 2017</p>
-          </div>
-          <div className="detail-section">
-            <h2>Location:</h2>
-            <p>Belvedere Banquets and Events
-              <br/>
-              1170 W. Devon Ave.
-              Elk Grove Village, IL 60007
-            </p>
+          <div className="signup">
+            <h2>Notify me when registrations open!</h2>
+            <TextField
+              hintText="Email Address"
+              />
+            <RaisedButton primary label="Notify me!"></RaisedButton>
           </div>
         </div>
-
-        <div className="callout">
-          <h3>
-            <a href="" target="_blank">Recently named one of Entrepreneur Magazine's Top 10 Marketing Conferences!</a>
-          </h3>
-        </div>
-
-        <div className="signup">
-          <h2>Notify me when registrations open!</h2>
-          <input type="text"></input>
-          <button>Sign Up</button>
-        </div>
+        */}
       </div>
       <div id="section3" className="section">
-        <h2 >
-          2 Full Days packed with <em>great</em> information you can use to <em>start, grow,</em> or <em>streamline</em> your business.
-        </h2>
-        <div className="box-container">
-          <div className="box">
-            <h2>Accomplished Speakers</h2>
-            <p>You’ll hear from speakers with proven track records and having real-world case studies.We have pros from the e-commerce world who have grown world class businesses.</p>
+        <div className="container image-section-container">
+          <div className="section-image">
+            <img
+              className="photo-2"
+              src="/images/section-photo-2.jpg"
+            />
           </div>
-          <div className="box">
-            <h2>Top-Notch Attendees</h2>
-            <p>Attendees will range from those operating million dollar e-commerce businesses to those just getting started. The wealth of experience, knowledge and enthusiasm will be mind blowing. Whether you are a savvy eCommerce professional or an eCommerce “newbie” you will have the opportunity to share your best tips and tricks, challenges and successes and learn from each other as well as from the professional speakers and sponsors.</p>
+          <div className="box-container">
+            <div className="box">
+              <h2>Accomplished Speakers</h2>
+              <p>You’ll hear from speakers with proven track records and having real-world case studies.We have pros from the e-commerce world who have grown world class businesses.</p>
+            </div>
+            <div className="box">
+              <h2>Top-Notch Attendees</h2>
+              <p>Attendees will range from those operating million dollar e-commerce businesses to those just getting started. The wealth of experience, knowledge and enthusiasm will be mind blowing. Whether you are a savvy eCommerce professional or an eCommerce “newbie” you will have the opportunity to share your best tips and tricks, challenges and successes and learn from each other as well as from the professional speakers and sponsors.</p>
+            </div>
           </div>
         </div>
       </div>
