@@ -30,9 +30,8 @@ module.exports = React.createClass({
             color: '#fff',
           }}
           style={{
-            background: 'rgba(0,0,0,0.5)',
-            padding: `${rhythm(1)} ${rhythm(3/4)}`,
-
+            background: '#fff',
+            padding: `4px ${rhythm(3/4)} 0px`,
           }}
         >
           <div
@@ -44,11 +43,14 @@ module.exports = React.createClass({
             <Link
               to={prefixLink('/')}
               style={{
-                color: '#fff',
                 textDecoration: 'none',
               }}
             >
-                {config.siteTitle}
+              <img src="/images/logo-text-only.png" alt="logo" style={{
+                  height: '60px',
+                  marginBottom: '0px',
+                }}
+              />
             </Link>
           </div>
         </Headroom>

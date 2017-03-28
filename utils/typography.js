@@ -13,7 +13,7 @@ const options = {
       ],
     },
     {
-      name: 'Arvo',
+      name: 'Droid Serif',
       styles: [
         '400',
         '400i',
@@ -22,7 +22,7 @@ const options = {
     },
   ],
   headerFontFamily: ['Source Sans Pro', 'Helvetica', 'sans-serif'],
-  bodyFontFamily: ['Source Sans Pro', 'Helvetica', 'sans-serif'],
+  bodyFontFamily: ['Droid Serif', 'Georgia', 'serif'],
   baseFontSize: '16px',
   baseLineHeight: 1.65,
   scaleRatio: 2.25,
