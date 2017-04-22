@@ -17,9 +17,11 @@ export default class Index extends React.Component {
           {"name": "keywords", "content": "sample, something"},
         ]}
       />
-      <div id="primary-banner" className="section">
+    <div id="primary-banner" className="section" style={{
+        backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0,0,0,0.5)), url(${prefixLink('/images/banner-bw.jpg')})`,
+      }}>
         <h1 >
-          <img src="/images/logo-light-on-dark.png" />
+          <img src={prefixLink('/images/logo-light-on-dark.png')} />
         </h1>
         <div className="ribbon-container">
           <div className="ribbon">
@@ -36,7 +38,7 @@ export default class Index extends React.Component {
           <div className="section-image">
             <img
               className="photo-1"
-              src="/images/section-photo-1.jpg"
+              src={prefixLink('/images/section-photo-1.jpg')}
             />
           </div>
           <div className="content-container">
@@ -90,7 +92,7 @@ export default class Index extends React.Component {
           <div className="section-image">
             <img
               className="photo-2"
-              src="/images/section-photo-2.jpg"
+              src={prefixLink('/images/section-photo-2.jpg')}
             />
           </div>
           <div className="box-container">

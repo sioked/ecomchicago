@@ -51,7 +51,7 @@ module.exports = React.createClass({
                   textDecoration: 'none',
                 }}
                 >
-                <img src="/images/logo-text-only.png" alt="logo" style={{
+                <img src={prefixLink('/images/logo-text-only.png')} alt="logo" style={{
                     height: '60px',
                     marginBottom: '0px',
                   }}
