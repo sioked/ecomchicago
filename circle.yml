@@ -7,6 +7,8 @@ machine:
     version: 6.9.1
 
 test:
+  override:
+    - echo "Just ship it! 📦"
   post:
     - gatsby build --prefix-links
 
