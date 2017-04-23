@@ -4,10 +4,44 @@ import { prefixLink } from 'gatsby-helpers'
 import Helmet from 'react-helmet'
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import { config } from 'config'
+import { config } from 'config';
+import Cookies from 'js-cookie';
+import 'whatwg-fetch';
 import './index.scss';
 
+
 export default class Index extends React.Component {
+	constructor(props) {
+		super(props);
+		const isSubmitted = Cookies.get('submitted');
+
+		this.state = {
+			input: '',
+			isSubmitted,
+		};
+		this._emailSubmitted = this._emailSubmitted.bind(this);
+		this._submitEmail = this._submitEmail.bind(this);
+	}
+
+	_emailSubmitted () {
+		Cookies.set('submitted', true);
+	}
+
+	_submitEmail () {
+		const url = config.emailUrl;
+		const email = this.state.input;
+		fetch(url, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				value1: email
+			}),
+		}).then(() => this._emailSubmitted())
+		.catch(()=> this._emailSubmitted());
+	}
+
   render () {
     return (<div id="main">
       <Helmet
@@ -54,38 +88,42 @@ export default class Index extends React.Component {
                 </h3>
               </div>
             </div>
-
-            <div className="detail-row detail-row-flex">
-              <div className="detail-section">
-                <h2>Date:</h2>
-                <p>October 20th to October 21st, 2017</p>
-              </div>
-              <div className="detail-section">
-                <h2>Location:</h2>
-                <p>Belvedere Banquets and Events
-                  <br/>
-                  1170 W. Devon Ave.
-                  <br/>
-                  Elk Grove Village, IL 60007
-                </p>
-              </div>
+            <div className="detail-row header-section">
+              <p>Partnering with the <a href="http://www.heartofamarine.org/">Heart of a Marine Foundation</a> to support veterans of all branches of the United States Armed Forces.</p>
             </div>
-          </div>
+						<div className="detail-row detail-row-flex">
+							<div className="detail-section">
+								<h2>Date:</h2>
+								<p>October 20th to October 21st, 2017</p>
+							</div>
+							<div className="detail-section">
+								<h2>Location:</h2>
+								<p>Belvedere Banquets and Events
+									<br/>
+									1170 W. Devon Ave.
+									<br/>
+									Elk Grove Village, IL 60007
+								</p>
+							</div>
+						</div>
+ 					</div>
 
         </div>
 
-
-        {/*
+				{ this.props.isRegistrationEnabled &&
         <div className="detail-row">
           <div className="signup">
-            <h2>Notify me when registrations open!</h2>
+            <h2>Get notified when registrations open!</h2>
             <TextField
               hintText="Email Address"
+      				onChange={(event) => this.setState({input: event.target.value})}
+      				value={this.state.input}
               />
-            <RaisedButton primary label="Notify me!"></RaisedButton>
+            <RaisedButton primary label="Notify me!" onClick={this._submitEmail}></RaisedButton>
           </div>
         </div>
-        */}
+        }
+
       </div>
       <div id="section3" className="section">
         <div className="container image-section-container">

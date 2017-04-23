@@ -5,6 +5,7 @@ import { prefixLink } from 'gatsby-helpers'
 import Headroom from 'react-headroom'
 import { MuiThemeProvider } from 'material-ui';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 
 import { config } from 'config'
 import '../css/markdown-styles'
@@ -20,7 +21,7 @@ module.exports = React.createClass({
   },
   render () {
     return (
-      <MuiThemeProvider theme={getMuiTheme('lightBaseTheme')}>
+      <MuiThemeProvider theme={getMuiTheme(darkBaseTheme)}>
         <div
           style={{
             position: 'relative',

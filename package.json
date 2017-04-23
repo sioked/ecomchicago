@@ -8,6 +8,7 @@
     "gatsby": "^0.12.36",
     "highlight.js": "^9.8.0",
     "history": "^2.0.2",
+    "js-cookie": "~2.1.4",
     "js-yaml": "^3.8.1",
     "markdown-it": "^7.0.1",
     "markdown-it-abbr": "^1.0.3",
@@ -25,7 +26,8 @@
     "smoothscroll-polyfill": "~0.3.4",
     "toml-js": "0.0.8",
     "typography": "^0.15.8",
-    "typography-plugin-code": "^0.15.0"
+    "typography-plugin-code": "^0.15.0",
+    "whatwg-fetch": "~2.0.3"
   },
   "devDependencies": {
     "gh-pages": "^0.12.0",
