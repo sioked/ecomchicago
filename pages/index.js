@@ -13,33 +13,6 @@ import './index.scss';
 export default class Index extends React.Component {
 	constructor(props) {
 		super(props);
-		const isSubmitted = Cookies.get('submitted');
-
-		this.state = {
-			input: '',
-			isSubmitted,
-		};
-		this._emailSubmitted = this._emailSubmitted.bind(this);
-		this._submitEmail = this._submitEmail.bind(this);
-	}
-
-	_emailSubmitted () {
-		Cookies.set('submitted', true);
-	}
-
-	_submitEmail () {
-		const url = config.emailUrl;
-		const email = this.state.input;
-		fetch(url, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				value1: email
-			}),
-		}).then(() => this._emailSubmitted())
-		.catch(()=> this._emailSubmitted());
 	}
 
   render () {
@@ -109,20 +82,6 @@ export default class Index extends React.Component {
  					</div>
 
         </div>
-
-				{ this.props.isRegistrationEnabled &&
-        <div className="detail-row">
-          <div className="signup">
-            <h2>Get notified when registrations open!</h2>
-            <TextField
-              hintText="Email Address"
-      				onChange={(event) => this.setState({input: event.target.value})}
-      				value={this.state.input}
-              />
-            <RaisedButton primary label="Notify me!" onClick={this._submitEmail}></RaisedButton>
-          </div>
-        </div>
-        }
 
       </div>
       <div id="section3" className="section">
