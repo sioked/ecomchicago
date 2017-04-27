@@ -2,7 +2,7 @@ machine:
   environment:
     PATH_TO_BUILD: ./public
     SURGE_DOMAIN_DEV: ecomchicago-dev.surge.sh
-    SURGE_DOMAIN_PROD: ecomchicago.com
+    SURGE_DOMAIN_PROD: www.ecomchicago.com
   node:
     version: 6.9.1
 
