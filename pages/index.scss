@@ -226,3 +226,12 @@ $ribbon-red: #DD1C1A;
   box-shadow: 2px 5px 8px rgba(0,0,0,0.5);
   margin-bottom: 2rem;
 }
+
+#map {
+  display: flex;
+  background-color: #086788;
+}
+#map > * {
+  margin: 0;
+  max-width: inherit;
+}
