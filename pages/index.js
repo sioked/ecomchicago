@@ -9,8 +9,8 @@ import Cookies from 'js-cookie';
 
 import Splash from '../sections/Splash';
 import Details from '../sections/Details';
-import WhatToLearn from '../sections/whattolearn';
-import Map from '../sections/map';
+import WhatToLearn from '../sections/Whattolearn';
+import Map from '../sections/Map';
 
 import 'whatwg-fetch';
 import './index.scss';
