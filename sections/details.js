@@ -23,8 +23,8 @@ function Details(props) {
           </div>
           <div className="detail-row header-section">
             <p>Partnering with the
-              <a href="http://www.heartofamarine.org/">Heart of a Marine Foundation</a>
-              to support veterans of all branches of the United States Armed Forces.</p>
+               &nbsp;<a href="http://www.heartofamarine.org/">Heart of a Marine Foundation</a>&nbsp;
+               to support veterans of all branches of the United States Armed Forces.</p>
           </div>
           <div className="detail-row detail-row-flex">
             <div className="detail-section">

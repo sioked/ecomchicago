@@ -6,7 +6,7 @@ const GMap = withGoogleMap(props => (
   <GoogleMap
     ref={props.onMapLoad}
     defaultZoom={11}
-    defaultCenter={{ lat: 41.9933046, lng: -88.029375 }}
+    defaultCenter={{ lat: 41.9933046, lng: -87.937500 }}
     onClick={props.onMapClick}
   >
     {props.markers.map((marker, index) => (
@@ -27,16 +27,22 @@ const markers= [{
 
 function Map(props) {
   return (
-    <div id="map" className="section maps">
+    <div id="map" className="section maps" style={{position: 'relative'}}>
       <GMap
-        containerElement={<div style={{height: '600px', width:'70%'}} />}
+        containerElement={<div className="map-container" />}
         mapElement={<div style={{height: '100%'}} />}
         onMapLoad={()=> console.log('map loaded')}
         onMapClick={() => console.log('map clicked')}
         markers={markers}
       />
-      <div style={{height: '100%'}}>
-        <h1>Hello World</h1>
+      <div className="map-details">
+        <h1>The Location</h1>
+        <p>The Conference will be hosted again at the Belvedere Banquets, just outside of Chicago near O'Hare Airport.</p>
+        <p>1170 W. Devon Ave. <br />
+          Elk Grove Village, IL 60007</p>
+        <h2>Rooms are available</h2>
+        <p>Book your room today at the Country Inn & Suites attached to the Event location</p>
+        <a href="https://www.countryinns.com/ecomchicago">Book here</a>
 
       </div>
     </div>
