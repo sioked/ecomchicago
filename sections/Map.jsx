@@ -7,6 +7,9 @@ const GMap = withGoogleMap(props => (
     ref={props.onMapLoad}
     defaultZoom={11}
     defaultCenter={{ lat: 41.9933046, lng: -87.937500 }}
+    defaultOptions={{
+      scrollwheel: false,
+    }}
     onClick={props.onMapClick}
   >
     {props.markers.map((marker, index) => (
