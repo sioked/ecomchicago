@@ -266,3 +266,29 @@ $ribbon-red: #DD1C1A;
     color: #fff;
   }
 }
+
+#sponsors {
+  background-color: rgba(0,0,0,0);
+  .sponsor-container {
+    display: flex;
+    margin-bottom: 2rem;
+  }
+  .sponsor {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 250px;
+    text-align: center;
+  }
+  .sponsor img {
+    flex: 0;
+    margin: auto;
+  }
+  .sponsor h3 {
+    margin-bottom: 0;
+  }
+  a.sponsor {
+    color: #000;
+    text-decoration: none;
+  }
+}

@@ -7,6 +7,7 @@ import Splash from '../sections/Splash';
 import Details from '../sections/Details';
 import WhatToLearn from '../sections/Whattolearn';
 import Map from '../sections/Map';
+import Sponsors from '../sections/sponsors';
 
 import './index.scss';
 
@@ -27,6 +28,7 @@ export default class Index extends React.Component {
         <Details />
         <WhatToLearn />
         <Map />
+        <Sponsors />
       </div>
     );
   }

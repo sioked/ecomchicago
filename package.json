@@ -4,6 +4,8 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "babel-eslint": "^7.2.3",
+    "babel-preset-stage-3": "^6.24.1",
     "front-matter": "^2.1.2",
     "gatsby": "^0.12.36",
     "highlight.js": "^9.8.0",
@@ -53,5 +55,14 @@
     "develop": "gatsby develop",
     "lint": "eslint --ext .js --ext .jsx ./",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "babel": {
+    "presets": [
+      "flow",
+      "stage-3"
+    ],
+    "env": {
+      "node": true
+    }
   }
 }

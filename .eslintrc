@@ -1,10 +1,17 @@
 {
+  "parser": "babel-eslint",
   "extends": [
     "airbnb"
   ],
   "env": {
     "browser": true,
     "node": true,
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
   },
   "rules": {
     "arrow-parens": 0,
