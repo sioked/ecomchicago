@@ -55,14 +55,5 @@
     "develop": "gatsby develop",
     "lint": "eslint --ext .js --ext .jsx ./",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "babel": {
-    "presets": [
-      "flow",
-      "stage-3"
-    ],
-    "env": {
-      "node": true
-    }
   }
 }

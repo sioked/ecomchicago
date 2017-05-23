@@ -9,7 +9,9 @@ import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import '../css/markdown-styles';
 import '../css/main';
 
-import { rhythm } from '../utils/typography';
+import typography from '../utils/typography';
+
+const { rhythm } = typography;
 
 module.exports = React.createClass({
   propTypes() {
@@ -18,6 +20,8 @@ module.exports = React.createClass({
     };
   },
   render() {
+    console.log('Children');
+    console.log(this.props.children);
     return (
       <MuiThemeProvider theme={getMuiTheme(darkBaseTheme)}>
         <div
