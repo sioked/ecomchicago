@@ -5,7 +5,9 @@ import { prefixLink } from 'gatsby-helpers';
 import { config } from 'config';
 import { TypographyStyle, GoogleFont } from 'react-typography';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+
 import typography from './utils/typography';
+
 injectTapEventPlugin();
 
 const BUILD_TIME = new Date().getTime();
@@ -21,7 +23,12 @@ module.exports = React.createClass({
 
     let css;
     if (process.env.NODE_ENV === 'production') {
-      css = <style dangerouslySetInnerHTML={{ __html: require('!raw!./public/styles.css') }} />;
+      css = (
+        <style
+          dangerouslySetInnerHTML={{
+            __html: require('!raw!./public/styles.css') //eslint-disable-line
+          }}
+        />);
     }
 
     return (

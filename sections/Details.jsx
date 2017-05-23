@@ -1,23 +1,27 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import { prefixLink } from 'gatsby-helpers';
 
-function Details(props) {
+function Details() {
   return (
     <div id="details" className="section">
       <div className="container image-section-container">
         <div className="section-image">
-          <img className="photo-1" src={prefixLink('/images/section-photo-1.jpg')}/>
+          <img
+            className="photo-1"
+            src={prefixLink('/images/section-photo-1.jpg')}
+            alt="The conference hosts"
+          />
         </div>
         <div className="content-container">
           <div className="detail-row header-section">
             <h2>A 2-day Conference for Online Store Owners and Marketplace Sellers of All Levels!</h2>
-            <p>Stay tuned and mark your calendars for eCom Chicago 2017. It's guaranteed to be 2 jam-packed days of learning that you can use to start, grow, or streamline your online business.</p>
+            <p>Stay tuned and mark your calendars for eCom Chicago 2017. It&#39;s guaranteed to be 2 jam-packed days of learning that you can use to start, grow, or streamline your online business.</p>
           </div>
 
           <div className="detail-row">
             <div className="callout">
               <h3>
-                <a href="https://www.entrepreneur.com/article/288833" target="_blank">Recently Highlighted in Entrepreneur Magazine!</a>
+                <a href="https://www.entrepreneur.com/article/288833" target="_blank" rel="noopener noreferrer">Recently Highlighted in Entrepreneur Magazine!</a>
               </h3>
             </div>
           </div>
@@ -34,9 +38,9 @@ function Details(props) {
             <div className="detail-section">
               <h2>Location:</h2>
               <p>Belvedere Banquets and Events
-                <br/>
+                <br />
                 1170 W. Devon Ave.
-                <br/>
+                <br />
                 Elk Grove Village, IL 60007
               </p>
             </div>

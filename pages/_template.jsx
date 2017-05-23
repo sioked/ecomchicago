@@ -1,5 +1,4 @@
 import React from 'react';
-import { Container } from 'react-responsive-grid';
 import { Link } from 'react-router';
 import { prefixLink } from 'gatsby-helpers';
 import Headroom from 'react-headroom';
@@ -7,7 +6,6 @@ import { MuiThemeProvider } from 'material-ui';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 
-import { config } from 'config';
 import '../css/markdown-styles';
 import '../css/main';
 
@@ -53,7 +51,9 @@ module.exports = React.createClass({
                 }}
               >
                 <img
-                  src={prefixLink('/images/logo-text-only.png')} alt="logo" style={{
+                  src={prefixLink('/images/logo-text-only.png')}
+                  alt="logo"
+                  style={{
                     height: '60px',
                     marginBottom: '0px',
                   }}
