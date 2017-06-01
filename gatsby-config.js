@@ -7,10 +7,11 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/data`,
         name: 'data',
+        path: `${__dirname}/data`,
       },
     },
+    'gatsby-transformer-remark',
     'gatsby-transformer-json',
     'gatsby-plugin-sass',
   ],

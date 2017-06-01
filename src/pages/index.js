@@ -33,7 +33,7 @@ export default class Index extends React.Component {
         <WhatToLearn />
         <Map />
         <Sponsors sponsors={get(this, 'props.data.allSponsorsJson.edges')} />
-        <Speakers speakers={get(this, 'props.data.allSpeakersJson.edges')} />
+        <Speakers speakers={get(this, 'props.data.allMarkdownRemark.edges')} />
       </div>
     );
   }
@@ -48,21 +48,25 @@ export const pageQuery = graphql`
       }
     },
     allSponsorsJson {
-    	edges {
-      	node {
-        	title,
-          url,
-          logo,
+    edges {
+        node {
+          title
+          url
+          logo
           id
-      	},
-    	},
-  	},
-    allSpeakersJson {
+        },
+      },
+    },
+    allMarkdownRemark {
       edges {
         node {
-          name
-          bio
-          slug
+          fields {
+            slug
+          },
+          frontmatter {
+            name
+            path
+          }
         }
       }
     }

@@ -1,13 +1,14 @@
 import React from 'react';
 
 function Speaker(speaker) {
+  console.log(speaker);
   return (
     <a
       className="speaker"
-      href={`speakers/${speaker.slug}`}
+      href={speaker.fields.slug}
     >
-      <img src={speaker.image} alt={speaker.name} />
-      <h3>{speaker.name}</h3>
+      <img src={speaker.frontmatter.image} alt={speaker.frontmatter.name} />
+      <h3>{speaker.frontmatter.name}</h3>
     </a>
   );
 }

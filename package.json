@@ -13,7 +13,7 @@
     "gatsby-plugin-sass": "next",
     "gatsby-source-filesystem": "next",
     "gatsby-transformer-json": "next",
-    "gatsby-transformer-remark": "^1.0.0-alpha12-alpha.51e1923f",
+    "gatsby-transformer-remark": "next",
     "highlight.js": "^9.8.0",
     "js-cookie": "~2.1.4",
     "js-yaml": "^3.8.1",
