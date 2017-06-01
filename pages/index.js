@@ -8,6 +8,7 @@ import Details from '../sections/Details';
 import WhatToLearn from '../sections/Whattolearn';
 import Map from '../sections/Map';
 import Sponsors from '../sections/Sponsors';
+import Speakers from '../sections/Speakers';
 
 import './index.scss';
 
@@ -29,6 +30,7 @@ export default class Index extends React.Component {
         <WhatToLearn />
         <Map />
         <Sponsors />
+        <Speakers />
       </div>
     );
   }
