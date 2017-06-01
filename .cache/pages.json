@@ -1,0 +1,12 @@
+[
+    {
+        "componentChunkName": "page-component---src-pages-index-js",
+        "jsonName": "index.json",
+        "path": "/"
+    },
+    {
+        "componentChunkName": "page-component---src-pages-speakers-js",
+        "jsonName": "speakers.json",
+        "path": "/speakers/"
+    }
+]
