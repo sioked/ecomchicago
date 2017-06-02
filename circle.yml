@@ -5,12 +5,14 @@ machine:
     SURGE_DOMAIN_PROD: www.ecomchicago.com
   node:
     version: 6.9.1
-
+install:
+  override:
+    - yarn install
 test:
   override:
     - echo "Just ship it! 📦"
   post:
-    - gatsby build --prefix-links
+    - yarn run build -- --prefix-links
 
 deployment:
   development:
@@ -21,4 +23,3 @@ deployment:
     branch: master
     commands:
       - ./node_modules/.bin/surge --project $PATH_TO_BUILD --domain $SURGE_DOMAIN_PROD
-
