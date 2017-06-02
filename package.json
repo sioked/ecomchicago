@@ -9,7 +9,7 @@
     "front-matter": "^2.1.2",
     "gatsby": "next",
     "gatsby-link": "next",
-    "gatsby-plugin-google-analytics": "next",
+    "gatsby-plugin-google-analytics": "^1.0.0-alpha11-alpha.69d037ff",
     "gatsby-plugin-sass": "next",
     "gatsby-source-filesystem": "next",
     "gatsby-transformer-json": "next",
