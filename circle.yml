@@ -13,7 +13,7 @@ test:
   override:
     - echo "Just ship it! 📦"
   post:
-    - yarn run build -- --prefix-links
+    - yarn run build
 
 deployment:
   development:
