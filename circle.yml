@@ -13,6 +13,7 @@ test:
   override:
     - echo "Just ship it! 📦"
   post:
+    - rm -rf .cache
     - yarn run build
 
 deployment:
