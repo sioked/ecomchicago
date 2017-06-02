@@ -5,7 +5,8 @@ machine:
     SURGE_DOMAIN_PROD: www.ecomchicago.com
   node:
     version: 6.9.1
-install:
+
+dependencies:
   override:
     - yarn install
 test:
