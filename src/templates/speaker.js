@@ -1,12 +1,18 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { get } from 'lodash';
+import './speakers.scss';
 
 function SpeakerTemplate(props) {
   const speaker = props.data.markdownRemark;
   const title = get(props, 'data.site.siteMetadata.title');
   return (
-    <div>
-      {speaker.frontmatter.name}
+    <div className="speaker-bio">
+      <h1>{speaker.frontmatter.name}</h1>
+      <img
+        className="bio-image"
+        src={speaker.frontmatter.image}
+        alt={speaker.frontmatter.name}
+      />
       <div dangerouslySetInnerHTML={{ __html: speaker.html }} />
     </div>
   );
@@ -26,6 +32,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         name
+        image
       }
     }
   }

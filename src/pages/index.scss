@@ -293,3 +293,43 @@ $ribbon-red: #DD1C1A;
     text-decoration: none;
   }
 }
+
+#speakers {
+  padding: 2rem;
+  background-color: #01AA9D;
+  color: #fff;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .speaker-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
+
+  .speaker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    font-size: 1.2rem;
+  }
+  .speaker .img-container {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    width: auto;
+    overflow: hidden;
+  }
+  .img-container img {
+    width: 200px;
+  }
+  h2 {
+    margin-top: 2rem;
+  }
+}

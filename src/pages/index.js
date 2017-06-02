@@ -66,6 +66,7 @@ export const pageQuery = graphql`
           frontmatter {
             name
             path
+            image
           }
         }
       }

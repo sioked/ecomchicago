@@ -7,8 +7,10 @@ function Speaker(speaker) {
       className="speaker"
       href={speaker.fields.slug}
     >
-      <img src={speaker.frontmatter.image} alt={speaker.frontmatter.name} />
-      <h3>{speaker.frontmatter.name}</h3>
+      <div className="img-container">
+        <img src={speaker.frontmatter.image} alt={speaker.frontmatter.name} />
+      </div>
+      <p>{speaker.frontmatter.name}</p>
     </a>
   );
 }

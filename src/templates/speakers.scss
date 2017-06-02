@@ -1,0 +1,15 @@
+.speaker-bio {
+  padding: 2rem;
+  padding-top: 100px;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  text-align: justify;
+
+  .bio-image {
+    float: right;
+    margin: 2rem;
+    margin-top: 0;
+    max-width: 250px;
+  }
+}
