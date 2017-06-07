@@ -33,7 +33,7 @@ function Details() {
           <div className="detail-row detail-row-flex">
             <div className="detail-section">
               <h2>Date:</h2>
-              <p>October 20th to October 21st, 2017</p>
+              <p>October 19th to October 21st, 2017</p>
             </div>
             <div className="detail-section">
               <h2>Location:</h2>

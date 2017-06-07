@@ -19,7 +19,7 @@ function Splash() {
         <div className="ribbon">
           <div className="ribbon-content">
             <h2>
-              October 20-21, 2017
+              October 19-21, 2017
             </h2>
           </div>
         </div>

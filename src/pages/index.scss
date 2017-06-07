@@ -6,6 +6,7 @@
 // #DD1C1A
 
 $light-text: #e9e9e9;
+$dark-text: #090909;
 
 
 #primary-banner {
@@ -86,13 +87,14 @@ $light-text: #e9e9e9;
 	padding: 0 3em;
 }
 
-$ribbon-red: #DD1C1A;
+$ribbon-color: #01AA9D;
 .ribbon {
  font-size: 16px !important;
  /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
  position: relative;
- background: $ribbon-red;
+ background: $ribbon-color;
  color: $light-text;
+ font-weight: normal;
  text-align: center;
  padding: 1em 2em; /* Adjust to suit */
  margin: 2em auto 0em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
@@ -107,7 +109,7 @@ $ribbon-red: #DD1C1A;
  position: absolute;
  display: block;
  bottom: -1em;
- border: 1.5em solid lighten($ribbon-red, 10);
+ border: 1.5em solid lighten($ribbon-color, 10);
  z-index: -1;
 }
 .ribbon:before {
@@ -125,7 +127,7 @@ $ribbon-red: #DD1C1A;
  position: absolute;
  display: block;
  border-style: solid;
- border-color: darken($ribbon-red, 10) transparent transparent transparent;
+ border-color: darken($ribbon-color, 10) transparent transparent transparent;
  bottom: -1em;
 }
 .ribbon .ribbon-content:before {
@@ -227,8 +229,9 @@ $ribbon-red: #DD1C1A;
 }
 
 .map-container {
+  position: absolute;
    height: 300px;
-   width:'100%';
+   width:100%;
 }
 @media(min-width: 900px) {
   .map-container {
@@ -281,7 +284,6 @@ $ribbon-red: #DD1C1A;
     text-align: center;
   }
   .sponsor img {
-    flex: 0;
     margin: auto;
   }
   .sponsor h3 {

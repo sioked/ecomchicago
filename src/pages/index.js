@@ -31,9 +31,9 @@ export default class Index extends React.Component {
         <Splash />
         <Details />
         <WhatToLearn />
-        <Map />
-        <Sponsors sponsors={get(this, 'props.data.allSponsorsJson.edges')} />
         <Speakers speakers={get(this, 'props.data.allMarkdownRemark.edges')} />
+        <Sponsors sponsors={get(this, 'props.data.allSponsorsJson.edges')} />
+        <Map />
       </div>
     );
   }

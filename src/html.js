@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 import { TypographyStyle, GoogleFont } from 'react-typography';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
+import Analytics from './analytics';
 import typography from './utils/typography';
 
 injectTapEventPlugin();
@@ -45,6 +46,7 @@ export default class Html extends Component {
             content="width=device-width, initial-scale=1.0"
           />
           <script src="https://www.google.com/maps/api/js?key=AIzaSyCS1j9k6FEHLsXt5T_xyUWTJ6hqM3FTVyU" />
+          <Analytics trackingId='UA-98179763-1' />
           {this.props.headComponents}
           <TypographyStyle typography={typography} />
           <GoogleFont typography={typography} />

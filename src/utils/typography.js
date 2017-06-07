@@ -9,6 +9,7 @@ const options = {
     {
       name: 'Source Sans Pro',
       styles: [
+        '400',
         '700',
       ],
     },
