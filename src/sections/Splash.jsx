@@ -1,6 +1,7 @@
 import React from 'react';
 import bg from '../pages/images/banner-bw.jpg';
 import logoLightOnDark from '../pages/images/logo-light-on-dark.png';
+import config from '../../gatsby-config';
 
 
 function Splash() {
@@ -12,9 +13,10 @@ function Splash() {
         backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0,0,0,0.5)), url(${bg})`,
       }}
     >
-      <h1 >
+      <div className="logo-container">
         <img src={logoLightOnDark} alt="logo" />
-      </h1>
+      </div>
+      <h3 className="tagline">Innovate, Inspire, and Grow</h3>
       <div className="ribbon-container">
         <div className="ribbon">
           <div className="ribbon-content">
@@ -23,6 +25,15 @@ function Splash() {
             </h2>
           </div>
         </div>
+      </div>
+      <p className="registration-details">Early-bird registration is now available! Use Promo Code EARLYBIRD to save $40!</p>
+      <div className="button-container">
+        <a
+          className="button"
+          href={config.siteMetadata.registrationUrl}
+        >
+          Register Now
+        </a>
       </div>
     </div>
   );

@@ -16,7 +16,6 @@ import './index.scss';
 export default class Index extends React.Component {
 
   render() {
-    console.log(this.props.data);
     return (
       <div id="main">
         <Helmet

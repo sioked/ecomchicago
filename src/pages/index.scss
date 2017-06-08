@@ -5,12 +5,18 @@
 // #FFF1D0
 // #DD1C1A
 
+$primary-green: #01AA9D;
 $light-text: #e9e9e9;
 $dark-text: #090909;
 
+em {
+  font-weight: bold;
+  font-style: normal;
+}
+
 
 #primary-banner {
-  height: 550px;
+  min-height: 550px;
   display: flex;
   flex-direction: column;
   justify-content:center;
@@ -20,25 +26,32 @@ $dark-text: #090909;
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: $light-text;
-  padding-top: 80px;
+  padding-top: 7rem;
+  padidng-bottom: 3rem;
 }
 
-#primary-banner h1 {
+#primary-banner .logo-container {
   line-height: 1.75em;
   font-weight: 800;
   letter-spacing: 0.185em;
   width: 400px;
   font-weight: normal;
+  text-align: center;
 }
 
+#primary-banner .tagline {
+  margin-top: 1rem;
+  font-weight: normal;
+  color: $primary-green;
+}
 #primary-banner h2 {
   font-weight: normal;
 }
-
 #primary-banner p {
   letter-spacing: 0.1em;
   max-width: 600px;
   text-align: center;
+  margin: 1.4rem;
 }
 
 #primary-banner img {
@@ -87,17 +100,18 @@ $dark-text: #090909;
 	padding: 0 3em;
 }
 
-$ribbon-color: #01AA9D;
+$ribbon-color: #fff;
 .ribbon {
- font-size: 16px !important;
- /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
- position: relative;
- background: $ribbon-color;
- color: $light-text;
- font-weight: normal;
- text-align: center;
- padding: 1em 2em; /* Adjust to suit */
- margin: 2em auto 0em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+  max-width: 400px;
+  font-size: 16px !important;
+  /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+  position: relative;
+  background: $ribbon-color;
+  color: $dark-text;
+  font-weight: normal;
+  text-align: center;
+  padding: 0.6em 1em; /* Adjust to suit */
+  margin: 2em auto 0em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
 }
 
 .ribbon a {
@@ -147,6 +161,7 @@ $ribbon-color: #01AA9D;
   position: relative;
   z-index: 1;
   bottom: 0px;
+  margin-bottom: 1.7rem;
 }
 
 @media(min-width:900px) {

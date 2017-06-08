@@ -1,22 +1,2 @@
 .headroom {
-  .button-container {
-    display: flex;
-  }
-  .button {
-    margin: auto;
-    font-family: Source Sans Pro,Helvetica,sans-serif;
-    font-weight: lighter;
-    font-size: 1.2rem;
-    background-color: #DD1C1A;
-    border-radius: 4px;
-    box-shadow: 1px 3px 6px rgba(0,0,0,0.3);
-    padding: 0.4rem 1rem;
-    text-align: center;
-    color: #FFF;
-    text-decoration: none;
-    &:hover {
-      background-color: darken(#DD1C1A, 10);
-      box-shadow: 2px 5px 8px rgba(0,0,0,0.5);
-    }
-  }
 }

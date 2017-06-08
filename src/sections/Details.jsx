@@ -14,8 +14,9 @@ function Details() {
         </div>
         <div className="content-container">
           <div className="detail-row header-section">
-            <h2>A 2-day Conference for Online Store Owners and Marketplace Sellers of All Levels!</h2>
-            <p>Stay tuned and mark your calendars for eCom Chicago 2017. It&#39;s guaranteed to be 2 jam-packed days of learning that you can use to start, grow, or streamline your online business.</p>
+            <h2>A 2-day Conference with a Bonus Pre-Event Vendor Day for Online Store Owners and Marketplace Sellers of All Levels!</h2>
+            <p>Registrations are now being accepted for eComChicago 2017! It&#39;s guaranteed to be 2 jam-packed days of learning that you can use to start, grow, or streamline your online business.</p>
+            <p><em>New this year</em> is a Pre-Event Vendor Day where our vendors will be signing up to give live-focused demos of their product or service. This is a great opportunity to learn about the tools, services, and products that can help you run your online business more effectively.</p>
           </div>
 
           <div className="detail-row">
