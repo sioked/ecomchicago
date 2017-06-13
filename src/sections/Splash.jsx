@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import bg from '../pages/images/banner-bw.jpg';
 import logoLightOnDark from '../pages/images/logo-light-on-dark.png';
 import config from '../../gatsby-config';
@@ -26,15 +27,19 @@ function Splash() {
           </div>
         </div>
       </div>
-      <p className="registration-details">Early-bird registration is now available! Use Promo Code EARLYBIRD to save $40!</p>
-      <div className="button-container">
-        <a
-          className="button"
-          href={config.siteMetadata.registrationUrl}
-        >
-          Register Now
-        </a>
-      </div>
+      { moment().isBefore(moment('2017-08-01')) &&
+        <div>
+          <p className="registration-details">Early-bird registration is now available! Use Promo Code EARLYBIRD to save $40!</p>
+          <div className="button-container">
+            <a
+              className="button"
+              href={config.siteMetadata.registrationUrl}
+            >
+              Register Now
+            </a>
+          </div>
+        </div>
+      }
     </div>
   );
 }
