@@ -14,6 +14,10 @@ em {
   font-style: normal;
 }
 
+body {
+  font-size: 18px;
+}
+
 
 #primary-banner {
   min-height: 550px;
@@ -41,6 +45,8 @@ em {
 
 #primary-banner .tagline {
   margin-top: 1rem;
+  font-family: 'Playball';
+  font-size: 1.6rem;
   font-weight: normal;
   color: $primary-green;
 }
@@ -75,6 +81,9 @@ em {
 .section > *{
   max-width: 1000px;
   margin: 0 auto;
+  @media(min-width: 1400px) {
+    max-width: 1200px
+  }
 }
 
 .photo-1 {
@@ -94,6 +103,9 @@ em {
   img {
     box-shadow: 2px 5px 8px rgba(0,0,0,0.5);
     align-self: center;
+  }
+  @media(max-width: 899px) {
+    margin: 0 auto!important;
   }
 }
 .content-container {
@@ -214,6 +226,10 @@ $ribbon-color: #fff;
   }
 }
 
+#details em {
+  font-size: 1.4rem;
+}
+
 #section3 {
   background-color: #fff;
   color: white;
@@ -332,8 +348,15 @@ $ribbon-color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1.5rem;
     font-size: 1.2rem;
+    width: 300px;
+    text-align: center;
+  }
+  .speaker-short {
+    font-size: 0.85rem;
+    color: darken(#fff, 13);
   }
   .speaker .img-container {
     height: 200px;

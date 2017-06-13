@@ -3,6 +3,7 @@ name: Eddie Levine
 layout: speaker
 path: "/speakers/eddie-levine/"
 image: "/speaker-shots/eddie-levine.jpg"
+short: President -- Wholesale Breakthrough
 ---
 
 Eddie Levine is the President and co-founder of Wholesale Breakthrough.  What started in 2012 from a $5,000 credit card debt and Eddie's garage has grown into a multi-million-dollar wholesale business operating out of a nearly 10,000 sq. ft. warehouse near Chicago, Illinois.  Eddie sells his products through diverse sales channels that include Amazon.com both as 1P and 3P seller, B-to-B retail outlets, Rakuten, Jet, Walmart, and the U.S. Government. He works with manufacturers and distributors to source quick-turning inventory in multi-pallet quantities, truckloads, or full containers. A logistics expert, Eddie keeps millions of dollars of inventory moving through his warehouse to sales outlets nationwide.

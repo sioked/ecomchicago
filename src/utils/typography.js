@@ -7,24 +7,29 @@ import CodePlugin from 'typography-plugin-code';
 const options = {
   googleFonts: [
     {
-      name: 'Source Sans Pro',
+      name: 'Lato',
       styles: [
         '400',
         '700',
       ],
     },
     {
-      name: 'Droid Serif',
+      name: 'Libre Baskerville',
       styles: [
         '400',
-        '400i',
         '700',
       ],
     },
+    {
+      name: 'Playball',
+      styles: [
+        '400',
+      ],
+    },
   ],
-  headerFontFamily: ['Source Sans Pro', 'Helvetica', 'sans-serif'],
-  bodyFontFamily: ['Droid Serif', 'Georgia', 'serif'],
-  baseFontSize: '16px',
+  headerFontFamily: ['Lato', 'Helvetica', 'sans-serif'],
+  bodyFontFamily: ['Libre Baskerville', 'Georgia', 'serif'],
+  baseFontSize: '18px',
   baseLineHeight: 1.65,
   scaleRatio: 2.25,
   plugins: [

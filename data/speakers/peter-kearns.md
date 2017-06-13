@@ -3,6 +3,7 @@ name: Peter Kearns
 layout: speaker
 path: "/speakers/peter-kearns"
 image: "/speaker-shots/peter-kearns.jpg"
+short: Owner -- PKearns Consulting
 ---
 
 Owner of PKearns Consulting [www.pkearnsconsulting.com](http://www.pkearnsconsulting.com) and Founder of the AIM Group

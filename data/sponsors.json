@@ -8,5 +8,10 @@
     "title": "BubbleFAST!",
     "url": "http://www.bubblefast.com",
     "logo": "/logos/bubblefast.jpg"
+  },
+  {
+    "title": "NeatoScan",
+    "url": "http://www.neatoscan.com",
+    "logo":"/logos/NeatoScan.png"
   }
 ]

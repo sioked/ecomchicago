@@ -3,6 +3,7 @@ name: Jason T. Smith
 layout: speaker
 path: "/speakers/jason-t-smith"
 image: "/speaker-shots/jasontsmith.jpg"
+short: Co-host -- Thrifting with Jay & Nay
 ---
 
 America’s #1 Thrift Hunter”, Jason T. Smith, has sourced it all and sold it all. Jason lives in fabulous Las Vegas and has thrifted treasures from every corner of the U.S.  For the last 17 years, he has victoriously survived a rapidly changing business he started on Ebay and Amazon and one that flourishes today.

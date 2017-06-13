@@ -66,6 +66,7 @@ export const pageQuery = graphql`
             name
             path
             image
+            short
           }
         }
       }
