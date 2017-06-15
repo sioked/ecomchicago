@@ -27,14 +27,12 @@ const markers= [{
   defaultAnimation: 2,
 }];
 
-function Map(props) {
+function Map() {
   return (
-    <div id="map" className="section maps" style={{position: 'relative'}}>
+    <div id="map" className="section maps" style={{ position: 'relative' }}>
       <GMap
         containerElement={<div className="map-container" />}
-        mapElement={<div style={{height: '100%'}} />}
-        onMapLoad={()=> console.log('map loaded')}
-        onMapClick={() => console.log('map clicked')}
+        mapElement={<div style={{ height: '100%' }} />}
         markers={markers}
       />
       <div className="map-details">
@@ -44,7 +42,7 @@ function Map(props) {
           Elk Grove Village, IL 60007</p>
         <h2>Rooms are available</h2>
         <p>Book your room today at the Country Inn & Suites attached to the Event location</p>
-        <a href="https://www.countryinns.com/ecomchicago">Book here</a>
+        <a href="https://www.countryinns.com/elk-grove-village-hotel-il-60007/ilelkgro">Book here</a>
 
       </div>
     </div>
