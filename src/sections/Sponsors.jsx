@@ -6,7 +6,9 @@ import React, { PropTypes } from 'react';
 function Sponsor(sponsor) {
   return (
     <a className="sponsor" href={sponsor.url}>
-      <img src={sponsor.logo} alt={sponsor.title} />
+      <div className="sponsor-image-container">
+        <img src={sponsor.logo} alt={sponsor.title} />
+      </div>
       <h3>{sponsor.title}</h3>
     </a>
   );

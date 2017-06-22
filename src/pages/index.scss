@@ -18,6 +18,13 @@ body {
   font-size: 18px;
 }
 
+img {
+  min-width: 1px;//Stupid IE bug fix, force re-compute of height
+}
+
+.headroom .button {
+  height: 45px; //Set the actual height to fix IE issues
+}
 
 #primary-banner {
   min-height: 550px;
@@ -35,6 +42,7 @@ body {
 }
 
 #primary-banner .logo-container {
+  min-height: 1px; //Stupid IE bug fix, forcing a re-compute of heights
   line-height: 1.75em;
   font-weight: 800;
   letter-spacing: 0.185em;
@@ -110,6 +118,9 @@ body {
 }
 .content-container {
 	padding: 0 3em;
+  max-width: 800px;
+  flex-shrink: 1;
+  display: flex;
 }
 
 $ribbon-color: #fff;
@@ -191,6 +202,9 @@ $ribbon-color: #fff;
   a {
     color: $light-text;
   }
+  .content-container {
+    flex-direction: column;
+  }
 }
 
 .detail-row {
@@ -247,9 +261,7 @@ $ribbon-color: #fff;
 }
 
 .box-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+
 }
 .box {
   background-color: #01AA9D;
@@ -314,8 +326,12 @@ $ribbon-color: #fff;
     height: 250px;
     text-align: center;
   }
-  .sponsor img {
+  .sponsor-image-container {
     margin: auto;
+    min-height: 1px; //Force IE reflow again
+  }
+  .sponsor-image-container img {
+    margin-bottom: 0px;
   }
   .sponsor h3 {
     margin-bottom: 0;

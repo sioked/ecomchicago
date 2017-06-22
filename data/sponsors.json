@@ -12,6 +12,11 @@
   {
     "title": "NeatoScan",
     "url": "http://www.neatoscan.com",
-    "logo":"/logos/NeatoScan.png"
+    "logo":"/logos/neatoscan.png"
+  },
+  {
+    "title": "InventoryLab",
+    "url": "http://www.inventorylab.com",
+    "logo": "/logos/inventorylab.png"
   }
 ]
