@@ -27,7 +27,7 @@ function Sponsors(props) {
             ))
           }
         </div>
-        <div>Sponsorships are available! Download and review our <a href="/files/2017_Sponsor_Package.doc">Sponsorship Packages</a></div>
+        <div>Sponsorships are available! Download and review our <a href="/assets/2017_Sponsor_Package.docx">Sponsorship Packages</a></div>
       </div>
     </div>
   );

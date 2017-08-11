@@ -317,21 +317,31 @@ $ribbon-color: #fff;
   padding: 2rem;
   .sponsor-container {
     display: flex;
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
   }
   .sponsor {
     display: flex;
     flex-direction: column;
     width: 250px;
-    height: 250px;
+    height: 200px;
+    margin-left: 1rem;
     text-align: center;
+  }
+  .sponsor:first-of-type {
+    margin-left: 0;
   }
   .sponsor-image-container {
     margin: auto;
     min-height: 1px; //Force IE reflow again
+    display: flex;
+    align-items: center;
+    height: 125px;
   }
   .sponsor-image-container img {
     margin-bottom: 0px;
+    max-height: 100%;
   }
   .sponsor h3 {
     margin-bottom: 0;
@@ -358,21 +368,22 @@ $ribbon-color: #fff;
     display: flex;
     flex-wrap: wrap;
     align-content: space-between;
+    justify-content: center;
   }
 
   .speaker {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 1rem;
     margin-bottom: 1.5rem;
     font-size: 1.2rem;
-    width: 300px;
+    width: 290px;
     text-align: center;
   }
   .speaker-short {
     font-size: 0.85rem;
     color: darken(#fff, 13);
+    padding: 0 1.8rem;
   }
   .speaker .img-container {
     height: 200px;
