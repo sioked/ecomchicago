@@ -5,11 +5,10 @@ import React, { PropTypes } from 'react';
 
 function Sponsor(sponsor) {
   return (
-    <a className="sponsor" href={sponsor.url}>
+    <a className="sponsor" href={sponsor.url} target="_blank" rel="noopener noreferrer">
       <div className="sponsor-image-container">
         <img src={sponsor.logo} alt={sponsor.title} />
       </div>
-      <h3>{sponsor.title}</h3>
     </a>
   );
 }
@@ -27,7 +26,7 @@ function Sponsors(props) {
             ))
           }
         </div>
-        <div>Sponsorships are available! Download and review our <a href="/assets/2017_Sponsor_Package.docx">Sponsorship Packages</a></div>
+        <div>Sponsorships are available! Download and review our <a href="/assets/2017_Sponsor_Package.docx" target="_blank" rel="noopener noreferrer">Sponsorship Packages</a></div>
       </div>
     </div>
   );

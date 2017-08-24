@@ -42,7 +42,7 @@ function Map() {
           Elk Grove Village, IL 60007</p>
         <h2>Rooms are available</h2>
         <p>Book your room today at the Country Inn & Suites attached to the Event location</p>
-        <a href="https://www.countryinns.com/ecomchicago">Book here</a>
+        <a href="https://www.countryinns.com/ecomchicago" target="_blank" rel="noreferrer noopener">Book here</a>
 
       </div>
     </div>

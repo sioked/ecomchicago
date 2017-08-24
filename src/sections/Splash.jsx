@@ -34,6 +34,8 @@ function Splash() {
             <a
               className="button"
               href={config.siteMetadata.registrationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Register Now
             </a>

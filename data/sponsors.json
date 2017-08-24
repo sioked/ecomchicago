@@ -23,5 +23,20 @@
     "title": "eBay Advertising",
     "url": "http://www.ebayadvertising.com",
     "logo": "/logos/ebayadvertising.png"
+  },
+  {
+    "title": "FedEx Supply Chain",
+    "url": "http://supplychain.fedex.com/",
+    "logo": "/logos/fedexsupplychain.png"
+  },
+  {
+    "title": "WorthPoint",
+    "url": "https://www.worthpoint.com/",
+    "logo": "/logos/worthpoint.jpg"
+  },
+  {
+    "title": "Scanner Society",
+    "url": "http://www.scannersociety.com/",
+    "logo": "/logos/scannersociety.png"
   }
 ]
