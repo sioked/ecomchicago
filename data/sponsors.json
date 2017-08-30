@@ -38,5 +38,10 @@
     "title": "Scanner Society",
     "url": "http://www.scannersociety.com/",
     "logo": "/logos/scannersociety.png"
+  },
+  {
+    "title": "FitShipper Labels",
+    "url":"https://www.fitshipper.com",
+    "logo": "/logos/fitshipper.png"
   }
 ]
