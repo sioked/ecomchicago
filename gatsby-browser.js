@@ -1,6 +1,6 @@
 import ReactGA from 'react-ga';
 
-ReactGA.initialize('UA-98179763-1');
+ReactGA.initialize('UA-105877311-1');
 
 require('smoothscroll-polyfill').polyfill();
 
