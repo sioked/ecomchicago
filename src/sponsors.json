@@ -43,5 +43,25 @@
     "title": "FitShipper Labels",
     "url":"https://www.fitshipper.com",
     "logo": "/logos/fitshipper.png"
+  },
+  {
+    "title": "Solutions4eCommerce",
+    "url":"http://www.solutions4ecommerce.com/",
+    "logo": "/logos/solutions4ecommerce.jpg"
+  },
+  {
+    "title": "BULQ",
+    "url":"https://www.bulq.com",
+    "logo": "/logos/bulq.png"
+  },
+  {
+    "title": "CoMerchant",
+    "url":"http://www.comerchant.com/",
+    "logo": "/logos/comerchant.png"
+  },
+  {
+    "title": "SellerLabs",
+    "url":"https://www.sellerlabs.com/",
+    "logo": "/logos/sellerlabs.jpg"
   }
 ]

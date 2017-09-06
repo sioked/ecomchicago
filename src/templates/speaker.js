@@ -6,14 +6,16 @@ function SpeakerTemplate(props) {
   const speaker = props.data.markdownRemark;
   const title = get(props, 'data.site.siteMetadata.title');
   return (
-    <div className="speaker-bio">
-      <h1>{speaker.frontmatter.name}</h1>
-      <img
-        className="bio-image"
-        src={speaker.frontmatter.image}
-        alt={speaker.frontmatter.name}
-      />
-      <div dangerouslySetInnerHTML={{ __html: speaker.html }} />
+    <div className="content-page">
+      <div className="content-container">
+        <h1>{speaker.frontmatter.name}</h1>
+        <img
+          className="bio-image"
+          src={speaker.frontmatter.image}
+          alt={speaker.frontmatter.name}
+        />
+        <div dangerouslySetInnerHTML={{ __html: speaker.html }} />
+      </div>
     </div>
   );
 }

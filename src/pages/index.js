@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { get } from 'lodash';
+import { get, filter } from 'lodash';
 import 'whatwg-fetch';
 
 import Splash from '../sections/Splash';
@@ -16,6 +16,9 @@ import './index.scss';
 export default class Index extends React.Component {
 
   render() {
+    const nodes = get(this, 'props.data.allMarkdownRemark.edges');
+    const filtered = filter(nodes, node => get(node, 'node.frontmatter.layout') === 'speaker');
+
     return (
       <div id="main">
         <Helmet
@@ -30,7 +33,7 @@ export default class Index extends React.Component {
         <Splash />
         <Details />
         <WhatToLearn />
-        <Speakers speakers={get(this, 'props.data.allMarkdownRemark.edges')} />
+        <Speakers speakers={filtered} />
         <Sponsors sponsors={get(this, 'props.data.allSponsorsJson.edges')} />
         <Map />
       </div>
@@ -64,6 +67,7 @@ export const pageQuery = graphql`
           },
           frontmatter {
             name
+            layout
             path
             image
             short

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'gatsby-link';
 import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 
 const GMap = withGoogleMap(props => (
@@ -41,9 +42,10 @@ function Map() {
         <p>1170 W. Devon Ave. <br />
           Elk Grove Village, IL 60007</p>
         <h2>Rooms are available</h2>
-        <p>Book your room today at the Country Inn & Suites attached to the Event location</p>
-        <a href="https://www.countryinns.com/ecomchicago" target="_blank" rel="noreferrer noopener">Book here</a>
-
+        <p><a href="https://www.countryinns.com/ecomchicago" target="_blank" rel="noreferrer noopener">Book your room today at the Country Inn & Suites</a> attached to the Event location</p>
+        <h2>
+          <Link to="/event-details/">... More Details</Link>
+        </h2>
       </div>
     </div>
   );
