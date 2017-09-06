@@ -7,7 +7,7 @@ function SpeakerTemplate(props) {
   const title = get(props, 'data.site.siteMetadata.title');
   return (
     <div className="content-page">
-      <div className="content-container">
+      <div className="info-container">
         <h1>{speaker.frontmatter.name}</h1>
         <img
           className="bio-image"

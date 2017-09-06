@@ -7,7 +7,7 @@ function InfoTemplate(props) {
   const siteTitle = get(props, 'data.site.siteMetadata.title');
   return (
     <div className="content-page">
-      <div className="content-container">
+      <div className="info-container">
         <div dangerouslySetInnerHTML={{ __html: content.html }} />
       </div>
     </div>
