@@ -42,7 +42,7 @@ export default function Layout(props) {
         >
           <div
             style={{
-              padding: `0 ${rhythm(3 / 4)}`,
+              padding: '0',
               maxWidth: '100%',
               display: 'flex',
               justifyContent: 'space-between',

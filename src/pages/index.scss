@@ -24,6 +24,10 @@ img {
 
 .headroom .button {
   height: 45px; //Set the actual height to fix IE issues
+  font-size: 1rem;
+  @media screen and (min-width: 480px) {
+    font-size: 1.2rem;
+  }
 }
 
 #primary-banner {
@@ -38,7 +42,7 @@ img {
   background-attachment: fixed;
   color: $light-text;
   padding-top: 7rem;
-  padidng-bottom: 3rem;
+  padding-bottom: 3rem;
 }
 
 #primary-banner .logo-container {
@@ -46,9 +50,12 @@ img {
   line-height: 1.75em;
   font-weight: 800;
   letter-spacing: 0.185em;
-  width: 400px;
   font-weight: normal;
   text-align: center;
+  margin: 1rem;
+  @media screen and (min-width: 480px) {
+    width: 400px;
+  }
 }
 
 #primary-banner .tagline {
@@ -257,7 +264,9 @@ $ribbon-color: #fff;
 #section3 .section-image {
   margin-right: 0px;
   margin-left: 4rem;
-  width: 450px;
+  @media (min-width: 450px) {
+    width: 450px;
+  }
 }
 
 .box-container {
