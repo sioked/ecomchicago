@@ -1,10 +1,9 @@
 import React from 'react';
-import { get } from 'lodash';
-import './speakers.scss';
+import DetailLinks from '../sections/DetailLinks';
+import './info.scss';
 
 function SpeakerTemplate(props) {
   const speaker = props.data.markdownRemark;
-  const title = get(props, 'data.site.siteMetadata.title');
   return (
     <div className="content-page">
       <div className="info-container">
@@ -15,6 +14,7 @@ function SpeakerTemplate(props) {
           alt={speaker.frontmatter.name}
         />
         <div dangerouslySetInnerHTML={{ __html: speaker.html }} />
+        <DetailLinks />
       </div>
     </div>
   );

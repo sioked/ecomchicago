@@ -27,7 +27,7 @@ Badge pickup is from 8:00 am to 9:00 am on both Friday and Saturday.
 All presentations, sponsors and attendees will be in the same room.  There will not be any break-out sessions.
 
 ## Meet and Greet
-Thursday night we will have our informal Meet and Greet at the Real Time Sports bar next door.
+Thursday night we will have our informal Meet and Greet at the Real Time Sports bar next door. We have a room set aside starting at 6pm, but come by any time you can. Ask for the room for the ecomChicago Meet & Greet.
 
 ## Breakfast & Lunches
 Free Continental breakfasts will be served Friday morning and Saturday morning in the conference room.
@@ -37,4 +37,4 @@ Freshly made deli sandwiches, homemade chips and cookies will be served on both 
 Jimmy’s Char House is located next door for a good meal at dinner time. Dinner is not included in the registration fee.
 
 ## Karaoke Party Friday Night
-eCom Chicago and The Scanner Society (formerly the Scanner Monkeys) will be co-hosting the always popular Karaoke Party Friday night.  Appetizers will be provided. Cash bar.  (If you buy Rich Siok enough beers you might be able to get him to perform his now famous rendition of “Just a Gigolo”
+eCom Chicago and The Scanner Society (formerly the Scanner Monkeys) will be co-hosting the always popular Karaoke Party Friday night from 7 to 9pm at the Belvedere, Suite 4.  Appetizers will be provided. Cash bar.  (If you buy Rich Siok enough beers you might be able to get him to perform his now famous rendition of “Just a Gigolo”

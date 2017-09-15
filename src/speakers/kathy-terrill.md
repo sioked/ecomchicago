@@ -20,6 +20,6 @@ Kathy is an in demand speaker and private sales coach. Kathy was asked by eBay t
 
 In addition to working with eBay sellers growing their businesses, Kathy is adept at helping large Amazon sellers optimize their listings for maximum sales on eBay.
 
-Her hit classes and great tips to increase sales for online sellers are available on her  website [http://www.ilovetobeselling.com](www.ilovetobeselling.com)
+Her hit classes and great tips to increase sales for online sellers are available on her  website [www.ilovetobeselling.com](http://www.ilovetobeselling.com)
 
 Kathy is skilled at helping sellers of all levels increase their eBay sales with expert tips she gleans from her extensive retail experience, work with eBay teams and  her social media knowledge.

@@ -6,7 +6,7 @@ image: "/speaker-shots/eddie-levine.jpg"
 short: President, Wholesale Breakthrough
 ---
 
-Eddie Levine is the President and co-founder of Wholesale Breakthrough, the consulting arm of a multi-million-dollar ecommerce business.  Eddie started the business in 2012 out of his garage with a $5,000 credit card debt.  The business sells products through diverse sales channels that include Amazon.com both as a seller and a direct vendor, B-to-B retail outlets, and multiple online platforms.  Today, together with his business partner Greg Gilpin, they operate out of two large warehouses near Chicago, Illinois.  Eddie & Greg work with manufacturers and distributors to source quick-turning inventory in multi-pallet quantities, truckloads, and full containers.
+Eddie Levine is the President and co-founder of [Wholesale Breakthrough](https://wholesalebreakthrough.com/), the consulting arm of a multi-million-dollar ecommerce business.  Eddie started the business in 2012 out of his garage with a $5,000 credit card debt.  The business sells products through diverse sales channels that include Amazon.com both as a seller and a direct vendor, B-to-B retail outlets, and multiple online platforms.  Today, together with his business partner Greg Gilpin, they operate out of two large warehouses near Chicago, Illinois.  Eddie & Greg work with manufacturers and distributors to source quick-turning inventory in multi-pallet quantities, truckloads, and full containers.
 
 As an extremely active member of the ecommerce community, Eddie travels worldwide to many trade shows and industry events every year.  He has participated as a speaker on several podcasts and at many seller conferences including the ASD Trade Shows, eCom Chicago, and Retail Global.
 

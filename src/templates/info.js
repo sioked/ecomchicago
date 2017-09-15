@@ -1,14 +1,15 @@
 import React from 'react';
 import { get } from 'lodash';
+import DetailLinks from '../sections/DetailLinks';
 import './info.scss';
 
 function InfoTemplate(props) {
-  const content = props.data.markdownRemark;
-  const siteTitle = get(props, 'data.site.siteMetadata.title');
+  const content = get(props, 'data.markdownRemark');
   return (
     <div className="content-page">
       <div className="info-container">
         <div dangerouslySetInnerHTML={{ __html: content.html }} />
+        <DetailLinks />
       </div>
     </div>
   );
