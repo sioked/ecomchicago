@@ -8,6 +8,7 @@
 $primary-green: #01AA9D;
 $light-text: #e9e9e9;
 $dark-text: #090909;
+$yellow: #FFDD00;
 
 em {
   font-weight: bold;
@@ -211,6 +212,14 @@ $ribbon-color: #fff;
   }
   .content-container {
     flex-direction: column;
+  }
+
+  em.highlight {
+    color: $yellow;
+    font-size: 1rem;
+    a {
+      color: $yellow;
+    }
   }
 }
 
