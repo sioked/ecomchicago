@@ -22,7 +22,7 @@
   {
     "title": "eBay Advertising",
     "url": "http://www.ebayadvertising.com",
-    "logo": "/logos/ebayadvertising.png"
+    "logo": "/logos/ebay.png"
   },
   {
     "title": "FedEx Supply Chain",
@@ -83,5 +83,10 @@
     "title": "SkuVault",
     "url":"http://www.skuvault.com",
     "logo": "/logos/skuvault.png"
+  },
+  {
+    "title": "Refund Retriever",
+    "url":"http://www.refundretriever.com/",
+    "logo": "/logos/refund-retriever.png"
   }
 ]
