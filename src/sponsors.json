@@ -91,7 +91,22 @@
   },
   {
     "title": "APC Postal Logistics",
-   "url":"http://www.apc-pli.com/",
+    "url":"http://www.apc-pli.com/",
     "logo": "/logos/apc.jpg"
+  },
+  {
+    "title": "3J Trading",
+    "url":"",
+    "logo": "/logos/3j-trading.png"
+  },
+  {
+    "title": "ScanPower",
+    "url":"http://www.scanpower.com",
+    "logo": "/logos/scanpower.png"
+  },
+  {
+    "title": "Trex",
+    "url":"",
+    "logo": "/logos/trex.jpg"
   }
 ]
