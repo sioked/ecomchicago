@@ -40,10 +40,10 @@ const Header = compose(
       </NavbarBrand>
       <NavbarMenu isActive={isOpen} onClick={toggleNav}>
         <NavbarStart>
-          <NavbarItem>
+          <NavbarItem isTab>
             <a href="#first">First</a>
           </NavbarItem>
-          <NavbarItem>
+          <NavbarItem isTab>
             <a href="#second">Second</a>
           </NavbarItem>
           <NavbarItem>
@@ -52,7 +52,9 @@ const Header = compose(
         </NavbarStart>
         <NavbarEnd>
           <NavbarItem>
-            <Button href="#" isColor="primary">
+            <Button href="#" isColor="danger" hasTextWeight="bold" style={{
+              fontWeight:"700"
+            }}>
               Register Now
             </Button>
           </NavbarItem>
