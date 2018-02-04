@@ -19,7 +19,7 @@ import { get } from 'lodash';
 
 function Contact() {
   /* eslint-disable no-restricted-globals */
-  const isSubmitted = get(qs.parse(location.search), 'submitted');
+  const isSubmitted = get(qs.parse(window.location.search), 'submitted');
   return (
     <div>
       <Hero isColor="info">
