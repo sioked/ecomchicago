@@ -1,0 +1,5 @@
+- Add sponsors
+- Add speakers
+- Configure deployments via circle
+- Update font for subtitle
+- Update lorem ipsum text

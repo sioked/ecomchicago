@@ -1,0 +1,75 @@
+@import "../../layouts/colors.scss";
+
+$ribbon-color: #fff;
+.ribbon {
+  max-width: 400px;
+  font-size: 16px !important;
+  /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+  position: relative;
+  background: $ribbon-color;
+  color: $dark-text;
+  font-weight: normal;
+  text-align: center;
+  padding: 0.6em 1em; /* Adjust to suit */
+  margin: 2em auto 0em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+}
+
+.ribbon a {
+  color: $light-text;
+}
+
+.ribbon:before, .ribbon:after {
+ content: "";
+ position: absolute;
+ display: block;
+ bottom: -1em;
+ border: 1.5em solid lighten($ribbon-color, 10);
+ z-index: -1;
+}
+.ribbon:before {
+ left: -2em;
+ border-right-width: 1.5em;
+ border-left-color: transparent;
+}
+.ribbon:after {
+ right: -2em;
+ border-left-width: 1.5em;
+ border-right-color: transparent;
+}
+.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+ content: "";
+ position: absolute;
+ display: block;
+ border-style: solid;
+ border-color: darken($ribbon-color, 10) transparent transparent transparent;
+ bottom: -1em;
+}
+.ribbon .ribbon-content:before {
+ left: 0;
+ border-width: 1em 0 0 1em;
+}
+.ribbon .ribbon-content:after {
+ right: 0;
+ border-width: 1em 1em 0 0;
+}
+
+.ribbon h2 {
+  margin-bottom: 0px;
+}
+
+.ribbon-container {
+  position: relative;
+  z-index: 1;
+  bottom: 0px;
+  margin-bottom: 1.7rem;
+}
+
+@media(min-width:900px) {
+	.ribbon-container {
+		width: 900px;
+	}
+	.ribbon {
+		width: 50%;
+	}
+}
+
