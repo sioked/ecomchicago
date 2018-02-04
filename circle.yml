@@ -5,7 +5,7 @@ machine:
     SURGE_DOMAIN_2017: 2017.ecomchicago.com
     SURGE_DOMAIN_PROD: www.ecomchicago.com
   node:
-    version: 7.10.0
+    version: 8.9.3
 
 dependencies:
   override:
