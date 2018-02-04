@@ -8,20 +8,21 @@ import {
   NavbarMenu,
   NavbarStart,
   NavbarEnd,
-  Image,
-  Button,
   Container,
+  NavbarLink,
+  NavbarDropdown,
 } from 'bloomer';
 
-import {compose, withState, withHandlers} from 'recompose';
+import { compose, withState, withHandlers } from 'recompose';
+import RegistrationButton from '../Buttons/Registration.js';
 import logo from '../Images/logo-no-text.png';
 
 const Header = compose(
   withState('isOpen', 'setIsOpen', false),
   withHandlers({
-    toggleNav: ({setIsOpen}) => () => setIsOpen(n => !n),
+    toggleNav: ({ setIsOpen }) => () => setIsOpen(n => !n),
   }),
-)(({isOpen, toggleNav}) => (
+)(({ isOpen, toggleNav }) => (
   <Container>
     <Navbar style={{}}>
       <NavbarBrand className="navbar-brand">
@@ -41,22 +42,22 @@ const Header = compose(
       <NavbarMenu isActive={isOpen} onClick={toggleNav}>
         <NavbarStart>
           <NavbarItem isTab>
-            <a href="#first">First</a>
+            <a href="#about">About</a>
           </NavbarItem>
           <NavbarItem isTab>
-            <a href="#second">Second</a>
+            <a href="#speakers">Speakers</a>
           </NavbarItem>
-          <NavbarItem>
-            <div>Third</div>
+          <NavbarItem hasDropdown isHoverable>
+            <NavbarLink>Previous Events</NavbarLink>
+            <NavbarDropdown>
+              <NavbarItem href="http://2017.ecomchicago.com">ecomChicago 2017</NavbarItem>
+              <NavbarItem href="http://2016.ecomchicago.com">ecomChicago 2016</NavbarItem>
+            </NavbarDropdown>
           </NavbarItem>
         </NavbarStart>
         <NavbarEnd>
           <NavbarItem>
-            <Button href="#" isColor="danger" hasTextWeight="bold" style={{
-              fontWeight:"700"
-            }}>
-              Register Now
-            </Button>
+            <RegistrationButton />
           </NavbarItem>
         </NavbarEnd>
       </NavbarMenu>

@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import {css} from 'glamor';
+import { css } from 'glamor';
 import {
   Hero,
   HeroBody,
@@ -9,13 +8,14 @@ import {
   Column,
   Title,
   Image,
-  Tile,
   Box,
   Section,
 } from 'bloomer';
+import content from '../../constants/content';
 import photo from '../Images/section-photo-1.jpg';
+import cubesTexture from '../Images/cubes.png';
 
-function Details({...props}) {
+function Details() {
   const reverse = css({
     '@media(min-width: 769px)': {
       'flex-direction': 'row-reverse',
@@ -26,7 +26,15 @@ function Details({...props}) {
     color: '#4A4A4A !important',
   });
   return (
-    <Hero isSize="medium" isColor="info">
+    <Hero
+      id="about"
+      isSize="medium"
+      isColor="info"
+      style={{
+        backgroundImage:
+        `url(${cubesTexture}})`,
+      }}
+    >
       <HeroBody>
         <Container hasTextAlign="centered">
           <Columns {...reverse} isVCentered>
@@ -49,7 +57,7 @@ function Details({...props}) {
                       <Title {...darkTitle} isSize={4} className={darkTitle}>
                         Date:
                       </Title>
-                      <p>Date, 2018</p>
+                      <p>{content.date}</p>
                     </Box>
                   </Column>
                   <Column isSize={6}>
@@ -57,9 +65,7 @@ function Details({...props}) {
                       <Title {...darkTitle} isSize={4} className={darkTitle}>
                         Location:
                       </Title>
-                      <p>
-                        Elk Grove Village, IL
-                      </p>
+                      <p>Elk Grove Village, IL</p>
                     </Box>
                   </Column>
                 </Columns>

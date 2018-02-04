@@ -7,6 +7,9 @@
     "browser": true,
     "node": true,
   },
+  "globals": {
+    "graphql": true,
+  },
   "parserOptions": {
     "ecmaVersion": 6,
     "ecmaFeatures": {
@@ -26,5 +29,6 @@
     "import/no-unresolved": 0,
     "react/prefer-stateless-function": 0,
     "react/jsx-filename-extension": 0,
+    "jsx-a11y/anchor-is-valid": 0,
   },
 }

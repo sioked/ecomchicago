@@ -1,7 +1,8 @@
 import React from 'react';
-import Link from 'gatsby-link';
-import {Hero, HeroBody, Container, Image, Title, Subtitle, Button} from 'bloomer';
+import { Hero, HeroBody, Container, Image, Title, Subtitle } from 'bloomer';
 import Ribbon from '../Ribbon';
+import RegistrationButton from '../Buttons/Registration';
+import content from '../../constants/content';
 import bg from '../Images/banner-bw.jpg';
 import logoLight from '../Images/logo-light-on-dark.png';
 
@@ -14,7 +15,8 @@ const Splash = () => (
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundAttachment: 'fixed',
-    }}>
+    }}
+  >
     <HeroBody>
       <Container hasTextAlign="centered">
         <Image
@@ -30,16 +32,15 @@ const Splash = () => (
           style={{
             color: '#fff',
           }}
-          isSpaced>
+          isSpaced
+        >
           2018
         </Title>
         <Subtitle isSize={5} hasTextColor="primary" isSpaced>
           Innovate, Inspire, and Grow
         </Subtitle>
-        <Ribbon>Date 2018</Ribbon>
-        <Button isColor="danger" style={{
-          fontWeight: "700"
-        }}>Register Now!</Button>
+        <Ribbon>{content.date}</Ribbon>
+        <RegistrationButton />
       </Container>
     </HeroBody>
   </Hero>

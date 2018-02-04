@@ -1,10 +1,27 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Footer as BFooter, Container } from 'bloomer';
-function Footer({...props}) {
+
+import {
+  Footer as BFooter,
+  Container,
+  Columns,
+  Column,
+  Title,
+  Content,
+} from 'bloomer';
+
+function Footer() {
   return (
     <BFooter>
-      <Container>This the footer</Container>
+      <Container>
+        <Columns>
+          <Column>
+            <Title isSize="5">Attributions</Title>
+            <Content isSize="small">
+              Podium icon by arejoenah from the Noun Project
+            </Content>
+          </Column>
+        </Columns>
+      </Container>
     </BFooter>
   );
 }
