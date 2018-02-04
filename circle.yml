@@ -1,0 +1,32 @@
+machine:
+  environment:
+    PATH_TO_BUILD: ./public
+    SURGE_DOMAIN_DEV: ecomchicago-dev.surge.sh
+    SURGE_DOMAIN_2017: 2017.ecomchicago.com
+    SURGE_DOMAIN_PROD: www.ecomchicago.com
+  node:
+    version: 7.10.0
+
+dependencies:
+  override:
+    - yarn install
+test:
+  override:
+    - echo "Just ship it! 📦"
+  post:
+    - rm -rf .cache
+    - yarn run build
+
+deployment:
+  development:
+    branch: develop
+    commands:
+      - ./node_modules/.bin/surge --project $PATH_TO_BUILD --domain $SURGE_DOMAIN_DEV
+  old2017:
+    branch: 2017
+    commands:
+      - ./node_modules/.bin/surge --project $PATH_TO_BUILD --domain $SURGE_DOMAIN_2017
+  production:
+    branch: master
+    commands:
+      - ./node_modules/.bin/surge --project $PATH_TO_BUILD --domain $SURGE_DOMAIN_PROD
