@@ -36,7 +36,15 @@ const Splash = () => (
         >
           2018
         </Title>
-        <Subtitle isSize={5} hasTextColor="primary" isSpaced>
+        <Subtitle
+          isSize={4}
+          hasTextColor="primary"
+          isSpaced
+          style={{
+            fontFamily: 'Playball, cursive',
+            fontSize: '1.7rem',
+          }}
+        >
           Innovate, Inspire, and Grow
         </Subtitle>
         <Ribbon>{content.date}</Ribbon>

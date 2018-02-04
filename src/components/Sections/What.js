@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   Hero,
   HeroBody,
@@ -12,7 +11,7 @@ import {
 } from 'bloomer';
 import photo from '../Images/section-photo-2.jpg';
 
-function What({...props}) {
+function What() {
   return (
     <Hero isSize="medium">
       <HeroBody>
@@ -21,7 +20,7 @@ function What({...props}) {
             <Column isSize={6}>
               <Notification isColor="primary">
                 <Title>Accomplished Speakers</Title>
-                You’ll hear from speakers with proven track records and having
+                You&#39;ll hear from speakers with proven track records and having
                 real-world case studies.We have pros from the e-commerce world
                 who have grown world class businesses.
               </Notification>
@@ -36,11 +35,12 @@ function What({...props}) {
                 as well as from the professional speakers and sponsors.
               </Notification>
               <Notification isColor="primary">
-                <Title>Valuable Vendor Demos</Title>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-                vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                <Title>Informative Vendor Demos</Title>
+                Make sure to arrive early so you can attend the vendor demo day!
+                We&#39;ve made arrangements with various different software vendors
+                to provide demos of their software, tools, and services. You&#39;ll
+                find new products that can help you streamline your business or
+                or new ideas to increase your online sales!
               </Notification>
             </Column>
             <Column isSize={6}>

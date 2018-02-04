@@ -18,23 +18,20 @@ import cubesTexture from '../Images/cubes.png';
 function Details() {
   const reverse = css({
     '@media(min-width: 769px)': {
-      'flex-direction': 'row-reverse',
+      flexDirection: 'row-reverse',
     },
   });
 
   const darkTitle = css({
     color: '#4A4A4A !important',
   });
+
+  const background = css({
+    backgroundImage: `url(${cubesTexture})`,
+  });
+
   return (
-    <Hero
-      id="about"
-      isSize="medium"
-      isColor="info"
-      style={{
-        backgroundImage:
-        `url(${cubesTexture}})`,
-      }}
-    >
+    <Hero id="about" isSize="medium" isColor="info" {...background}>
       <HeroBody>
         <Container hasTextAlign="centered">
           <Columns {...reverse} isVCentered>
@@ -44,11 +41,11 @@ function Details() {
                 Owners
               </Title>
               <Section>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet.
+                Whether you sell on eBay, Amazon Marketplace, or your own
+                eCommerce website, ecomChicago is the midwest&#39;s best
+                eCommerce conference for you! There will be 3 jam-packed days of
+                vendor demos, speakers, and learning that you can use to
+                jump-start, grow, or streamline your online business.
               </Section>
               <Section hasTextAlign="centered">
                 <Columns isCentered>

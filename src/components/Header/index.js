@@ -42,10 +42,10 @@ const Header = compose(
       <NavbarMenu isActive={isOpen} onClick={toggleNav}>
         <NavbarStart>
           <NavbarItem isTab>
-            <a href="#about">About</a>
+            <a href="/#about">About</a>
           </NavbarItem>
           <NavbarItem isTab>
-            <a href="#speakers">Speakers</a>
+            <a href="/#speakers">Speakers</a>
           </NavbarItem>
           <NavbarItem hasDropdown isHoverable>
             <NavbarLink>Previous Events</NavbarLink>
