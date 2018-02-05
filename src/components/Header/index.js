@@ -41,17 +41,21 @@ const Header = compose(
       </NavbarBrand>
       <NavbarMenu isActive={isOpen} onClick={toggleNav}>
         <NavbarStart>
-          <NavbarItem isTab>
-            <a href="/#about">About</a>
+          <NavbarItem href="/#about" isTab>
+            About
           </NavbarItem>
-          <NavbarItem isTab>
-            <a href="/#speakers">Speakers</a>
+          <NavbarItem href="/#speakers" isTab>
+            Speakers
           </NavbarItem>
           <NavbarItem hasDropdown isHoverable>
             <NavbarLink>Previous Events</NavbarLink>
             <NavbarDropdown>
-              <NavbarItem href="http://2017.ecomchicago.com">ecomChicago 2017</NavbarItem>
-              <NavbarItem href="http://2016.ecomchicago.com">ecomChicago 2016</NavbarItem>
+              <NavbarItem href="http://2017.ecomchicago.com">
+                ecomChicago 2017
+              </NavbarItem>
+              <NavbarItem href="http://2016.ecomchicago.com">
+                ecomChicago 2016
+              </NavbarItem>
             </NavbarDropdown>
           </NavbarItem>
         </NavbarStart>
