@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Hero, HeroBody, Container, Title, Image, Content } from 'bloomer';
 import Img from 'gatsby-image';
+import { css } from 'glamor';
 import Podium from '../Images/podium.svg';
 import linenTexture from '../Images/low-contrast-linen.png';
 
@@ -63,6 +64,9 @@ AllSpeakers.defaultProps = {
   edges: [],
 };
 
+const link = css({
+  textDecoration: 'underline',
+});
 function EmptySpeaker() {
   return (
     <div>
@@ -76,7 +80,10 @@ function EmptySpeaker() {
       <Title isSize={3}>Stay Tuned!</Title>
       <Content isSize={4}>
         We&#39;re working to put together an informative and entertaining group
-        of speakers. If you&#39;re interested in speaking, please <a href="/contact">contact us</a>.
+        of speakers. If you&#39;re interested in speaking, please{' '}
+        <a {...link} href="/contact">
+          contact us
+        </a>.
       </Content>
     </div>
   );
