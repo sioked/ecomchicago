@@ -76,7 +76,7 @@ function EmptySpeaker() {
       <Title isSize={3}>Stay Tuned!</Title>
       <Content isSize={4}>
         We&#39;re working to put together an informative and entertaining group
-        of speakers. If you&#39;re interested in speaking, please reach out.
+        of speakers. If you&#39;re interested in speaking, please <a href="/contact">contact us</a>.
       </Content>
     </div>
   );
