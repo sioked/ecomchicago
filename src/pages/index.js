@@ -21,7 +21,7 @@ const IndexPage = ({ data }) => (
       ]}
     />
     <HelmetDatoCms
-      seo={data.datoCmsIndexpage.seoMetaTags}
+      seo={data.datoCmsIndexPage.seoMetaTags}
       favicon={data.datoCmsSite.faviconMetaTags}
     />
     {/*  */}
@@ -56,7 +56,7 @@ export const query = graphql`
         ...GatsbyDatoCmsFaviconMetaTags
       }
     }
-    datoCmsIndexpage {
+    datoCmsIndexPage {
       seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
       }
@@ -90,7 +90,7 @@ IndexPage.propTypes = {
         }),
       ),
     }).isRequired,
-    datoCmsIndexpage: PropTypes.shape({
+    datoCmsIndexPage: PropTypes.shape({
       seoMetaTags: PropTypes.shape({
         tags: PropTypes.arrayOf(
           PropTypes.shape({
