@@ -8,8 +8,8 @@ import linenTexture from '../Images/low-contrast-linen.png';
 
 function Speakers({ data }) {
   return (
-    data.allContentfulSpeaker &&
-    data.allContentfulSpeaker.edges && (
+    data.allDatoCmsSpeaker &&
+    data.allDatoCmsSpeaker.edges && (
       <Hero
         isSize="medium"
         isColor="primary"
@@ -21,11 +21,11 @@ function Speakers({ data }) {
         <HeroBody>
           <Container hasTextAlign="centered">
             <Title>Speakers</Title>
-            {!data.allContentfulSpeaker.edges.length ||
+            {!data.allDatoCmsSpeaker.edges.length ||
             process.env.GATSBY_SPEAKERS_DISABLED ? (
               <EmptySpeaker />
             ) : (
-              <AllSpeakers edges={data.allContentfulSpeaker.edges} />
+              <AllSpeakers edges={data.allDatoCmsSpeaker.edges} />
             )}
           </Container>
         </HeroBody>
@@ -93,7 +93,7 @@ Speakers.defaultProps = {};
 
 Speakers.propTypes = {
   data: PropTypes.shape({
-    allContentfulSpeaker: PropTypes.shape({
+    allDatoCmsSpeaker: PropTypes.shape({
       edges: PropTypes.arrayOf(
         PropTypes.shape({
           node: PropTypes.shape({

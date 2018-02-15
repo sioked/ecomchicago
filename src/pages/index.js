@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { HelmetDatoCms } from 'gatsby-source-datocms';
 import Splash from '../components/Sections/Splash.js';
 import Details from '../components/Sections/Details.js';
 import What from '../components/Sections/What.js';
-import Footer from '../components/Sections/Footer.js';
 import Speakers from '../components/Sections/Speakers.js';
 import content from '../constants/content.js';
 
@@ -20,39 +20,45 @@ const IndexPage = ({ data }) => (
         },
       ]}
     />
+    <HelmetDatoCms
+      seo={data.datoCmsIndexPage.seoMetaTags}
+      favicon={data.datoCmsSite.faviconMetaTags}
+    />
     {/*  */}
     <Splash />
     <Details />
     <What />
     <Speakers data={data} />
-    <Footer />
   </div>
 );
 
 export const query = graphql`
-  query speakersQuery {
-    allContentfulSpeaker {
+  query indexQuery {
+    allDatoCmsSpeaker {
       edges {
         node {
           id
           name
           slug
           title
-          blurb {
-            id
-            blurb
-          }
+          blurb
           photo {
             id
-            title
-            resolutions(width: 200) {
-              width
-              height
-              src
-              srcSet
+            resolutions(width: 200, imgixParams: { fm: "jpg", auto: "compress" }) {
+              ...GatsbyDatoCmsResolutions
             }
           }
         }
+      }
+    }
+    datoCmsSite {
+      faviconMetaTags {
+        ...GatsbyDatoCmsFaviconMetaTags
+      }
+    }
+    datoCmsIndexPage {
+      seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
       }
     }
   }
@@ -60,7 +66,7 @@ export const query = graphql`
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
-    allContentfulSpeaker: PropTypes.shape({
+    allDatoCmsSpeaker: PropTypes.shape({
       edges: PropTypes.arrayOf(
         PropTypes.shape({
           node: PropTypes.shape({
@@ -83,7 +89,33 @@ IndexPage.propTypes = {
           }),
         }),
       ),
-    }),
+    }).isRequired,
+    datoCmsIndexPage: PropTypes.shape({
+      seoMetaTags: PropTypes.shape({
+        tags: PropTypes.arrayOf(
+          PropTypes.shape({
+            tagName: PropTypes.string,
+            content: PropTypes.string,
+          }),
+        ),
+      }),
+    }).isRequired,
+    datoCmsSite: PropTypes.shape({
+      faviconMetaTags: PropTypes.shape({
+        tags: PropTypes.arrayOf(
+          PropTypes.shape({
+            tagName: PropTypes.string,
+            attributes: PropTypes.arrayOf(
+              PropTypes.shape({
+                rel: PropTypes.string,
+                sizes: PropTypes.string,
+                href: PropTypes.string,
+              }),
+            ),
+          }),
+        ),
+      }),
+    }).isRequired,
   }).isRequired,
 };
 export default IndexPage;
