@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { HelmetDatoCms } from 'gatsby-source-datocms';
 import Splash from '../components/Sections/Splash.js';
 import Details from '../components/Sections/Details.js';
 import What from '../components/Sections/What.js';
@@ -19,6 +20,10 @@ const IndexPage = ({ data }) => (
         },
       ]}
     />
+    <HelmetDatoCms
+      seo={data.datoCmsIndexpage.seoMetaTags}
+      favicon={data.datoCmsSite.faviconMetaTags}
+    />
     {/*  */}
     <Splash />
     <Details />
@@ -28,7 +33,7 @@ const IndexPage = ({ data }) => (
 );
 
 export const query = graphql`
-  query speakersQuery {
+  query indexQuery {
     allDatoCmsSpeaker {
       edges {
         node {
@@ -46,7 +51,16 @@ export const query = graphql`
         }
       }
     }
-
+    datoCmsSite {
+      faviconMetaTags {
+        ...GatsbyDatoCmsFaviconMetaTags
+      }
+    }
+    datoCmsIndexpage {
+      seoMetaTags {
+        ...GatsbyDatoCmsSeoMetaTags
+      }
+    }
   }
 `;
 
@@ -60,8 +74,11 @@ IndexPage.propTypes = {
             name: PropTypes.string,
             slug: PropTypes.string,
             title: PropTypes.string,
-            blurb: PropTypes.string,
+            blurb: PropTypes.shape({
+              blurb: PropTypes.string,
+            }),
             photo: PropTypes.shape({
+              title: PropTypes.string,
               resolutions: PropTypes.shape({
                 width: PropTypes.number,
                 height: PropTypes.number,
@@ -72,7 +89,33 @@ IndexPage.propTypes = {
           }),
         }),
       ),
-    }),
+    }).isRequired,
+    datoCmsIndexpage: PropTypes.shape({
+      seoMetaTags: PropTypes.shape({
+        tags: PropTypes.arrayOf(
+          PropTypes.shape({
+            tagName: PropTypes.string,
+            content: PropTypes.string,
+          }),
+        ),
+      }),
+    }).isRequired,
+    datoCmsSite: PropTypes.shape({
+      faviconMetaTags: PropTypes.shape({
+        tags: PropTypes.arrayOf(
+          PropTypes.shape({
+            tagName: PropTypes.string,
+            attributes: PropTypes.arrayOf(
+              PropTypes.shape({
+                rel: PropTypes.string,
+                sizes: PropTypes.string,
+                href: PropTypes.string,
+              }),
+            ),
+          }),
+        ),
+      }),
+    }).isRequired,
   }).isRequired,
 };
 export default IndexPage;
