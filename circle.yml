@@ -4,7 +4,7 @@ machine:
     SURGE_DOMAIN_DEV: ecomchicago-dev.surge.sh
     SURGE_DOMAIN_2017: 2017.ecomchicago.com
     SURGE_DOMAIN_PROD: www.ecomchicago.com
-    NOTIFY_HOOK: https://webhooks.datocms.com/45f01439fa5745bf0acd/deploy-results
+    NOTIFY_HOOK: 
   node:
     version: 8.9.3
 
@@ -34,4 +34,4 @@ deployment:
 
 notify:
   webhooks:
-    - url: $NOTIFY_HOOK
+    - url: https://webhooks.datocms.com/45f01439fa5745bf0acd/deploy-results
