@@ -13,19 +13,15 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     const speakerTemplate = path.resolve('./src/templates/speakers.js');
     graphql(`
       query speakersQuery {
-        allContentfulSpeaker {
+        allDatoCmsSpeaker {
           edges {
             node {
               name
               slug
               title
-              blurb {
-                id
-                blurb
-              }
+              blurb
               photo {
                 id
-                title
                 resolutions(width: 200) {
                   width
                   height
@@ -38,12 +34,12 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
       }
     `).then(result => {
-      if (result.errors) {
+      if (result.errors || !result.data || !result.data.allDatoCmsSpeaker) {
         reject(result.errors);
       }
 
       // Create blog posts pages.
-      _.each(result.data.allContentfulSpeaker.edges, edge => {
+      _.each(result.data.allDatoCmsSpeaker.edges, edge => {
         console.log('Creating page for: ', edge.node.slug);
         createPage({
           path: `speakers/${edge.node.slug}`, // required

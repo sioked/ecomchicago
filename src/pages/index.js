@@ -4,7 +4,6 @@ import Helmet from 'react-helmet';
 import Splash from '../components/Sections/Splash.js';
 import Details from '../components/Sections/Details.js';
 import What from '../components/Sections/What.js';
-import Footer from '../components/Sections/Footer.js';
 import Speakers from '../components/Sections/Speakers.js';
 import content from '../constants/content.js';
 
@@ -25,42 +24,35 @@ const IndexPage = ({ data }) => (
     <Details />
     <What />
     <Speakers data={data} />
-    <Footer />
   </div>
 );
 
 export const query = graphql`
   query speakersQuery {
-    allContentfulSpeaker {
+    allDatoCmsSpeaker {
       edges {
         node {
           id
           name
           slug
           title
-          blurb {
-            id
-            blurb
-          }
+          blurb
           photo {
             id
-            title
-            resolutions(width: 200) {
-              width
-              height
-              src
-              srcSet
+            resolutions(width: 200, imgixParams: { fm: "jpg", auto: "compress" }) {
+              ...GatsbyDatoCmsResolutions
             }
           }
         }
       }
     }
+
   }
 `;
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
-    allContentfulSpeaker: PropTypes.shape({
+    allDatoCmsSpeaker: PropTypes.shape({
       edges: PropTypes.arrayOf(
         PropTypes.shape({
           node: PropTypes.shape({
@@ -68,11 +60,8 @@ IndexPage.propTypes = {
             name: PropTypes.string,
             slug: PropTypes.string,
             title: PropTypes.string,
-            blurb: PropTypes.shape({
-              blurb: PropTypes.string,
-            }),
+            blurb: PropTypes.string,
             photo: PropTypes.shape({
-              title: PropTypes.string,
               resolutions: PropTypes.shape({
                 width: PropTypes.number,
                 height: PropTypes.number,
