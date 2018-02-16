@@ -23,8 +23,7 @@ deployment:
   development:
     branch: develop
     commands:
-      - export GATSBY_SPEAKERS_DISABLED=
-      - ./node_modules/.bin/surge --project $PATH_TO_BUILD --domain $SURGE_DOMAIN_DEV
+      - GATSBY_SPEAKERS_DISABLED= ./node_modules/.bin/surge --project $PATH_TO_BUILD --domain $SURGE_DOMAIN_DEV
   old2017:
     branch: 2017
     commands:
