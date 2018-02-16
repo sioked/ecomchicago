@@ -34,15 +34,14 @@ function Speakers({ data }) {
   );
 }
 
-function AllSpeakers({ edges }) {
+function AllSpeakers({ edges: speakers }) {
   return (
     <div>
-      {edges.map(edge => (
-        <a href={`/speakers/${edge.node.slug}`}>
-          <div>{edge.node.name}</div>
-          <div>{process.env.GATSBY_SPEAKERS_DISABLED}</div>
-          <div>{edge.node.title}</div>
-          <Img resolutions={edge.node.photo.resolutions} />
+      {speakers.map(speaker => (
+        <a href={`/speakers/${speaker.node.slug}`}>
+          <div>{speaker.node.name}</div>
+          <div>{speaker.node.title}</div>
+          <Img resolutions={speaker.node.photo.resolutions} />
         </a>
       ))}
     </div>

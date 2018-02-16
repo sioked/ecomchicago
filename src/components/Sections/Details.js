@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { css } from 'glamor';
 import {
   Hero,
@@ -7,15 +8,17 @@ import {
   Columns,
   Column,
   Title,
-  Image,
   Box,
   Section,
+  Content,
 } from 'bloomer';
+import Markdown from 'react-markdown';
+import Img from 'gatsby-image';
 import content from '../../constants/content';
-import photo from '../Images/section-photo-1.jpg';
+import ImageResolutions from '../../proptypes/imageResolutions.js';
 import cubesTexture from '../Images/cubes.png';
 
-function Details() {
+function Details({ text, title, image }) {
   const reverse = css({
     '@media(min-width: 769px)': {
       flexDirection: 'row-reverse',
@@ -36,16 +39,11 @@ function Details() {
         <Container hasTextAlign="centered">
           <Columns {...reverse} isVCentered>
             <Column isSize={8}>
-              <Title hasTextAlign="centered">
-                A 3-Day Ecommerce Conference for Online Entrepreneurs and Store
-                Owners
-              </Title>
+              <Title hasTextAlign="centered">{title}</Title>
               <Section>
-                Whether you sell on eBay, Amazon Marketplace, or your own
-                eCommerce website, ecomChicago is the midwest&#39;s best
-                eCommerce conference for you! There will be 3 jam-packed days of
-                vendor demos, speakers, and learning that you can use to
-                jump-start, grow, or streamline your online business.
+                <Content>
+                  <Markdown source={text} />
+                </Content>
               </Section>
               <Section hasTextAlign="centered">
                 <Columns isCentered>
@@ -69,7 +67,7 @@ function Details() {
               </Section>
             </Column>
             <Column isSize={4}>
-              <Image src={photo} alt="The conference hosts" />
+              <Img sizes={image.sizes} />
             </Column>
           </Columns>
         </Container>
@@ -78,8 +76,17 @@ function Details() {
   );
 }
 
-Details.defaultProps = {};
+Details.defaultProps = {
+  text: '',
+  title: '',
+};
 
-Details.propTypes = {};
+Details.propTypes = {
+  text: PropTypes.string,
+  title: PropTypes.string,
+  image: PropTypes.shape({
+    sizes: ImageResolutions,
+  }).isRequired,
+};
 
 export default Details;

@@ -7,6 +7,8 @@ import Details from '../components/Sections/Details.js';
 import What from '../components/Sections/What.js';
 import Speakers from '../components/Sections/Speakers.js';
 import content from '../constants/content.js';
+import SplashImageType from '../proptypes/splashImage.js';
+import ImageResolutions from '../proptypes/imageResolutions.js';
 
 const IndexPage = ({ data }) => (
   <div>
@@ -25,9 +27,16 @@ const IndexPage = ({ data }) => (
       favicon={data.datoCmsSite.faviconMetaTags}
     />
     {/*  */}
-    <Splash />
-    <Details />
-    <What />
+    <Splash splashImage={data.datoCmsIndexPage.splashImage} />
+    <Details
+      title={data.datoCmsIndexPage.detailsTitle}
+      text={data.datoCmsIndexPage.detailsText}
+      image={data.datoCmsIndexPage.detailsImage}
+    />
+    <What
+      image={data.datoCmsIndexPage.whatImage}
+      content={data.datoCmsIndexPage.whatData}
+    />
     <Speakers data={data} />
   </div>
 );
@@ -44,7 +53,17 @@ export const query = graphql`
           blurb
           photo {
             id
-            resolutions(width: 200, imgixParams: { fm: "jpg", auto: "compress" }) {
+            resolutions(
+              width: 200
+              height: 200
+              imgixParams: {
+                crop: "faces"
+                w: "200"
+                h: "200"
+                fm: "jpg"
+                auto: "compress"
+              }
+            ) {
               ...GatsbyDatoCmsResolutions
             }
           }
@@ -60,6 +79,28 @@ export const query = graphql`
       seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
       }
+      splashImage {
+        resize(width: 1200, imgixParams: { blur: 5, auto: "compress" }) {
+          src
+        }
+      }
+      detailsText
+      detailsTitle
+      detailsImage {
+        sizes(maxWidth: 370, imgixParams: { fm: "jpg", auto: "compress" }) {
+          ...GatsbyDatoCmsSizes
+        }
+      }
+      whatImage {
+        sizes(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+          ...GatsbyDatoCmsSizes
+        }
+      }
+      whatData {
+        id
+        title
+        text
+      }
     }
   }
 `;
@@ -74,17 +115,10 @@ IndexPage.propTypes = {
             name: PropTypes.string,
             slug: PropTypes.string,
             title: PropTypes.string,
-            blurb: PropTypes.shape({
-              blurb: PropTypes.string,
-            }),
+            blurb: PropTypes.string,
             photo: PropTypes.shape({
               title: PropTypes.string,
-              resolutions: PropTypes.shape({
-                width: PropTypes.number,
-                height: PropTypes.number,
-                src: PropTypes.string,
-                srcSet: PropTypes.arrayOf(PropTypes.string),
-              }),
+              resolutions: ImageResolutions,
             }),
           }),
         }),
@@ -99,7 +133,22 @@ IndexPage.propTypes = {
           }),
         ),
       }),
-    }).isRequired,
+      detailsText: PropTypes.string,
+      splashImage: SplashImageType.isRequired,
+      detailsImage: PropTypes.shape({
+        resolutions: ImageResolutions,
+      }),
+      whatImage: PropTypes.shape({
+        sizes: ImageResolutions,
+      }),
+      whatData: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.string,
+          title: PropTypes.string,
+          text: PropTypes.string,
+        }),
+      ),
+    }),
     datoCmsSite: PropTypes.shape({
       faviconMetaTags: PropTypes.shape({
         tags: PropTypes.arrayOf(
