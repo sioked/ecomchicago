@@ -4,7 +4,7 @@ import { Container, Section, Title } from 'bloomer';
 import Markdown from 'react-markdown';
 
 function SpeakerTemplate(props) {
-  const speaker = props.data.contentfulSpeaker;
+  const speaker = props.data.datoCmsSpeaker;
   return (
     <Section>
       <Container>
@@ -14,7 +14,7 @@ function SpeakerTemplate(props) {
           alt={speaker.name}
           resolutions={speaker.photo.resolutions}
         />
-        <Markdown source={speaker.blurb.blurb}/>
+        <Markdown source={speaker.blurb} />
       </Container>
     </Section>
   );
@@ -24,17 +24,13 @@ export default SpeakerTemplate;
 
 export const pageQuery = graphql`
   query SpeakerByPath($slug: String!) {
-    contentfulSpeaker(slug: {eq: $slug}) {
+    datoCmsSpeaker(slug: { eq: $slug }) {
       name
       slug
       title
-      blurb {
-        id
-        blurb
-      }
+      blurb
       photo {
         id
-        title
         resolutions(width: 250) {
           width
           height
