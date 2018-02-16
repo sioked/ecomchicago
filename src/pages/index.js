@@ -55,7 +55,14 @@ export const query = graphql`
             id
             resolutions(
               width: 200
-              imgixParams: { fm: "jpg", auto: "compress" }
+              height: 200
+              imgixParams: {
+                crop: "faces"
+                w: "200"
+                h: "200"
+                fm: "jpg"
+                auto: "compress"
+              }
             ) {
               ...GatsbyDatoCmsResolutions
             }
