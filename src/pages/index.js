@@ -43,7 +43,7 @@ const IndexPage = ({ data }) => (
 
 export const query = graphql`
   query indexQuery {
-    allDatoCmsSpeaker {
+    allDatoCmsSpeaker(sort: { fields: [position], order: ASC }) {
       edges {
         node {
           id
@@ -57,7 +57,9 @@ export const query = graphql`
               width: 200
               height: 200
               imgixParams: {
-                crop: "faces"
+                fit: "facearea"
+                faceindex: 1
+                facepad: 2
                 w: "200"
                 h: "200"
                 fm: "jpg"
