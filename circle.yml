@@ -17,20 +17,22 @@ test:
     - echo "Just ship it! 📦"
   post:
     - rm -rf .cache
-    - yarn run build
 
 deployment:
   development:
     branch: develop
     commands:
-      - GATSBY_SPEAKERS_DISABLED= ./node_modules/.bin/surge --project $PATH_TO_BUILD --domain $SURGE_DOMAIN_DEV
+      - NODE_ENV=production GATSBY_SPEAKERS_DISABLED= yarn run build
+      - ./node_modules/.bin/surge --project $PATH_TO_BUILD --domain $SURGE_DOMAIN_DEV
   old2017:
     branch: 2017
     commands:
+      - yarn run build
       - ./node_modules/.bin/surge --project $PATH_TO_BUILD --domain $SURGE_DOMAIN_2017
   production:
     branch: master
     commands:
+      - NODE_ENV=production yarn run build
       - ./node_modules/.bin/surge --project $PATH_TO_BUILD --domain $SURGE_DOMAIN_PROD
 
 notify:
