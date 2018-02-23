@@ -4,7 +4,6 @@ machine:
     SURGE_DOMAIN_DEV: ecomchicago-dev.surge.sh
     SURGE_DOMAIN_2017: 2017.ecomchicago.com
     SURGE_DOMAIN_PROD: https://www.ecomchicago.com
-    SURGE_DOMAIN_PROD: www.ecomchicago.com
     NOTIFY_HOOK: 
   node:
     version: 8.9.3
