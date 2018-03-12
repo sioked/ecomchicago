@@ -62,15 +62,20 @@ const speakerStyle = css({
 });
 function AllSpeakers({ edges: speakers }) {
   return (
-    <Container {...containerStyle}>
+    <Container>
       <Title>Speakers</Title>
-      {speakers.map(speaker => (
-        <a href={`/speakers/${speaker.node.slug}`} {...speakerStyle}>
-          <Img resolutions={speaker.node.photo.resolutions} className={image} />
-          <Title isSize={4}>{speaker.node.name}</Title>
-          <Subtitle isSize={5}>{speaker.node.title}</Subtitle>
-        </a>
-      ))}
+      <div {...containerStyle}>
+        {speakers.map(speaker => (
+          <a href={`/speakers/${speaker.node.slug}`} {...speakerStyle}>
+            <Img
+              resolutions={speaker.node.photo.resolutions}
+              className={image}
+            />
+            <Title isSize={4}>{speaker.node.name}</Title>
+            <Subtitle isSize={5}>{speaker.node.title}</Subtitle>
+          </a>
+        ))}
+      </div>
     </Container>
   );
 }
