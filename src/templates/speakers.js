@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Img from 'gatsby-image';
-import { css } from 'glamor';
-import { Container, Title, Hero, HeroBody, Subtitle } from 'bloomer';
+import { css, after } from 'glamor';
+import { Container, Content, Title, Hero, HeroBody, Subtitle } from 'bloomer';
 import Markdown from 'react-markdown';
 import RegistrationButton from '../components/Buttons/Registration.js';
 
@@ -12,6 +12,13 @@ const profile = css({
   margin: '0 3rem 0 0',
   float: 'left',
 });
+const clearFloat = css(
+  after({
+    content: ' ',
+    display: 'table',
+    clear: 'both',
+  }),
+);
 
 function SpeakerTemplate(props) {
   const speaker = props.data.datoCmsSpeaker;
@@ -21,7 +28,7 @@ function SpeakerTemplate(props) {
         <Container>
           <Title>{speaker.name}</Title>
           <Subtitle>{speaker.title}</Subtitle>
-          <div>
+          <Content {...clearFloat}>
             <Img
               className={`${profile} bio-image`}
               alt={speaker.name}
@@ -29,9 +36,9 @@ function SpeakerTemplate(props) {
               {...profile}
             />
             <Markdown source={speaker.blurb} />
-          </div>
+          </Content>
           <RegistrationButton />
-          <Link to="/">Go Back</Link>
+          <Link to="/">&#8678; Go Back</Link>
         </Container>
       </HeroBody>
     </Hero>
