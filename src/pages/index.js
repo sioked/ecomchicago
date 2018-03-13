@@ -6,6 +6,7 @@ import Splash from '../components/Sections/Splash.js';
 import Details from '../components/Sections/Details.js';
 import What from '../components/Sections/What.js';
 import Speakers from '../components/Sections/Speakers.js';
+import Sponsors from '../components/Sections/Sponsors.js';
 import content from '../constants/content.js';
 import SplashImageType from '../proptypes/splashImage.js';
 import ImageResolutions from '../proptypes/imageResolutions.js';
@@ -38,6 +39,7 @@ const IndexPage = ({ data }) => (
       content={data.datoCmsIndexPage.whatData}
     />
     <Speakers data={data} />
+    <Sponsors data={data} />
   </div>
 );
 
@@ -67,6 +69,19 @@ export const query = graphql`
               }
             ) {
               ...GatsbyDatoCmsResolutions
+            }
+          }
+        }
+      }
+    }
+    allDatoCmsSponsor(sort: { fields: [position], order: ASC }) {
+      edges {
+        node {
+          url
+          name
+          logo {
+            sizes(maxWidth: 200) {
+              ...GatsbyDatoCmsSizes
             }
           }
         }
@@ -126,6 +141,19 @@ IndexPage.propTypes = {
         }),
       ),
     }).isRequired,
+    allDatoCmsSponsor: PropTypes.shape({
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.shape({
+            url: PropTypes.string,
+            name: PropTypes.string,
+            logo: PropTypes.shape({
+              sizes: ImageResolutions,
+            }),
+          }),
+        }),
+      ),
+    }),
     datoCmsIndexPage: PropTypes.shape({
       seoMetaTags: PropTypes.shape({
         tags: PropTypes.arrayOf(
