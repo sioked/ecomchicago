@@ -47,6 +47,9 @@ const Header = compose(
           <NavbarItem href="/#speakers" isTab>
             Speakers
           </NavbarItem>
+          <NavbarItem href="/#sponsors" isTab>
+            Sponsors
+          </NavbarItem>
           <NavbarItem hasDropdown isHoverable>
             <NavbarLink>Previous Events</NavbarLink>
             <NavbarDropdown>

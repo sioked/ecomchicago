@@ -1,41 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
-import { css, after } from 'glamor';
+import { css } from 'glamor';
 import { Hero, HeroBody, Container, Title } from 'bloomer';
 
 const logo = css({
   width: '250px',
+  display: 'flex',
+  alignItems: 'center',
+  margin: '30px 0 30px 50px',
 });
 
 const logoContainer = css({
   display: 'flex',
-  justifyContent: 'space-around',
+  justifyContent: 'center',
   flexWrap: 'wrap',
 });
 
-const clearFix = css(
-  after({
-    content: ' ',
-    display: 'table',
-    clear: 'both',
-  }),
-);
+const flexLogo = css({
+  flex: 1,
+});
 
 function Sponsors({ ...props }) {
   const sponsors = props.data.allDatoCmsSponsor.edges;
   return (
-    <Hero>
+    <Hero id="sponsors">
       <HeroBody>
         <Container>
           <Title>Sponsors</Title>
           <div {...logoContainer}>
             {sponsors.map(sponsor => (
-              <div {...css(logo, clearFix)}>
+              <div {...logo}>
                 <a
                   href={sponsor.node.url}
                   alt={sponsor.node.name}
                   target="_new"
+                  {...flexLogo}
                 >
                   <Img sizes={sponsor.node.logo.sizes} />
                 </a>
