@@ -22,7 +22,7 @@ deployment:
   development:
     branch: develop
     commands:
-      - NODE_ENV=production GATSBY_SPEAKERS_DISABLED= yarn run build
+      - NODE_ENV=production DATOCMS_PREVIEW_ENABLED=true GATSBY_SPEAKERS_DISABLED= yarn run build
       - ./node_modules/.bin/surge --project $PATH_TO_BUILD --domain $SURGE_DOMAIN_DEV
   old2017:
     branch: 2017

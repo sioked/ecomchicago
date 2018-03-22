@@ -24,7 +24,7 @@ const flexLogo = css({
 function Sponsors({ ...props }) {
   const sponsors = props.data.allDatoCmsSponsor.edges;
   return (
-    <Hero id="sponsors">
+    <Hero id="sponsors" isSize="medium">
       <HeroBody>
         <Container>
           <Title>Sponsors</Title>

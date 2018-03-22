@@ -1,7 +1,5 @@
 require('dotenv').config();
 
-console.log('AccessToken: ', process.env.CONTENTFUL_ACCESS_TOKEN);
-
 module.exports = {
   siteMetadata: {
     title:
@@ -18,16 +16,10 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-contentful',
-      options: {
-        spaceId: 'x3z8k6e8dgnq',
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-      },
-    },
-    {
       resolve: 'gatsby-source-datocms',
       options: {
         apiToken: process.env.DATOCMS_API_TOKEN,
+        previewMode: process.env.DATOCMS_PREVIEW_ENABLED,
       },
     },
     {

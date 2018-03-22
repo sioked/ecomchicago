@@ -59,6 +59,7 @@ const speakerStyle = css({
   flexDirection: 'column',
   alignItems: 'center',
   width: '290px',
+  padding: '0 20px 20px 20px',
 });
 function AllSpeakers({ edges: speakers }) {
   return (
@@ -72,7 +73,7 @@ function AllSpeakers({ edges: speakers }) {
               className={image}
             />
             <Title isSize={4}>{speaker.node.name}</Title>
-            <Subtitle isSize={5}>{speaker.node.title}</Subtitle>
+            <Subtitle isSize={5} hasTextAlign="centered">{speaker.node.title}</Subtitle>
           </a>
         ))}
       </div>
