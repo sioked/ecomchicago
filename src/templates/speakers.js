@@ -20,6 +20,12 @@ const clearFloat = css(
   }),
 );
 
+const mdContent = css({
+  '& a': {
+    'text-decoration': 'underline',
+  },
+});
+
 function SpeakerTemplate(props) {
   const speaker = props.data.datoCmsSpeaker;
   return (
@@ -35,7 +41,7 @@ function SpeakerTemplate(props) {
               resolutions={speaker.photo.resolutions}
               {...profile}
             />
-            <Markdown source={speaker.blurb} />
+            <Markdown source={speaker.blurb} {...mdContent} className={mdContent} />
           </Content>
           <RegistrationButton />
           <Link to="/">&#8678; Go Back</Link>

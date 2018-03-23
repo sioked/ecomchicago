@@ -14,19 +14,39 @@ function Footer() {
     <BFooter>
       <Container>
         <Columns>
-          <Column isSize="1/2" >
+          <Column isSize="1/2">
             <Title isSize="6">&copy; ecomChicago 2018</Title>
-            <ul className="is-size-6">
-              <li>
-                <a href="#about">About</a>
-              </li>
-              <li>
-                <a href="#details">Details</a>
-              </li>
-              <li>
-                <a href="contact">Contact</a>
-              </li>
-            </ul>
+            <Columns>
+              <Column isSize="1/2">
+                <ul className="is-size-6">
+                  <li>
+                    <a href="#about">About</a>
+                  </li>
+                  <li>
+                    <a href="#details">Details</a>
+                  </li>
+                  <li>
+                    <a href="#speakers">Speakers</a>
+                  </li>
+                  <li>
+                    <a href="#sponsors">Sponsors</a>
+                  </li>
+                  <li>
+                    <a href="contact">Contact</a>
+                  </li>
+                </ul>
+              </Column>
+              <Column isSize="1/2">
+                <ul className="is-size-6">
+                  <li>
+                    <a href="http://2016.ecomchicago.com">ecomChicago 2016</a>
+                  </li>
+                  <li>
+                    <a href="http://2017.ecomchicago.com">ecomChicago 2017</a>
+                  </li>
+                </ul>
+              </Column>
+            </Columns>
           </Column>
           <Column isSize="1/2" className="has-text-right-tablet">
             <Title isSize="6">Attributions</Title>
