@@ -20,19 +20,16 @@ function Footer() {
               <Column isSize="1/2">
                 <ul className="is-size-6">
                   <li>
-                    <a href="#about">About</a>
+                    <a href="/#about">About</a>
                   </li>
                   <li>
-                    <a href="#details">Details</a>
+                    <a href="/#speakers">Speakers</a>
                   </li>
                   <li>
-                    <a href="#speakers">Speakers</a>
+                    <a href="/#sponsors">Sponsors</a>
                   </li>
                   <li>
-                    <a href="#sponsors">Sponsors</a>
-                  </li>
-                  <li>
-                    <a href="contact">Contact</a>
+                    <a href="/contact">Contact</a>
                   </li>
                 </ul>
               </Column>
