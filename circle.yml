@@ -33,7 +33,7 @@ deployment:
     branch: master
     commands:
       - NODE_ENV=production yarn run build
-      - ./node_modules/.bin/surge --project $PATH_TO_BUILD --domain $SURGE_DOMAIN_PROD
+      - ./node_modules/.bin/surge GATSBY_SPEAKERS_DISABLED= --project $PATH_TO_BUILD --domain $SURGE_DOMAIN_PROD
 
 notify:
   webhooks:
