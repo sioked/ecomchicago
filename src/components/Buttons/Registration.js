@@ -3,9 +3,9 @@ import React from 'react';
 import { Button } from 'bloomer';
 
 function Registration() {
-  return process.env.REGISTRATION_ENABLED ? (
+  return !process.env.GATSBY_REGISTRATION_DISABLED ? (
     <Button
-      href="#"
+      href={process.env.GATSBY_REGISTRATION_LINK || '#'}
       isColor="danger"
       hasTextWeight="bold"
       style={{

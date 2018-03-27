@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "EcomChicago",
+  "description": "EcomChicago Static Site",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Ed Siok",
   "dependencies": {
     "bloomer": "^0.6.3",
     "bulma": "^0.6.2",
@@ -20,6 +20,7 @@
     "gatsby-source-filesystem": "^1.5.15",
     "glamor": "^2.20.40",
     "lodash": "^4.17.5",
+    "object-fit-images": "^3.2.3",
     "query-string": "^5.1.0",
     "react-animations": "^1.0.0",
     "react-helmet": "^5.2.0",
@@ -30,16 +31,24 @@
   "keywords": [
     "gatsby"
   ],
+  "browserslist": [
+    ">1%",
+    "IE >= 11",
+    "last 2 versions"
+  ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "develop": "env $(cat .env | xargs) gatsby develop",
+    "develop": "env $(cat .env | xargs) gatsby develop -H 0.0.0.0",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2017": "^6.24.1",
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.7.0",

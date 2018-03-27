@@ -1,6 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Hero, HeroBody, Container, Title, Image, Content } from 'bloomer';
+import {
+  Hero,
+  HeroBody,
+  Container,
+  Subtitle,
+  Title,
+  Image,
+  Content,
+} from 'bloomer';
 import Img from 'gatsby-image';
 import { css } from 'glamor';
 import Podium from '../Images/podium.svg';
@@ -19,8 +27,7 @@ function Speakers({ data }) {
         id="speakers"
       >
         <HeroBody>
-          <Container hasTextAlign="centered">
-            <Title>Speakers</Title>
+          <Container>
             {!data.allDatoCmsSpeaker.edges.length ||
             process.env.GATSBY_SPEAKERS_DISABLED ? (
               <EmptySpeaker />
@@ -34,17 +41,43 @@ function Speakers({ data }) {
   );
 }
 
+const image = css({
+  borderRadius: '50%',
+  backgroundColor: '#fff',
+  ':hover img:nth-of-type(2)': {
+    opacity: '0.7!important',
+  },
+});
+const containerStyle = css({
+  display: 'flex',
+  flexWrap: 'wrap',
+  alignContent: 'space-between',
+  justifyContent: 'center',
+});
+const speakerStyle = css({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  width: '290px',
+  padding: '0 20px 20px 20px',
+});
 function AllSpeakers({ edges: speakers }) {
   return (
-    <div>
-      {speakers.map(speaker => (
-        <a href={`/speakers/${speaker.node.slug}`}>
-          <div>{speaker.node.name}</div>
-          <div>{speaker.node.title}</div>
-          <Img resolutions={speaker.node.photo.resolutions} />
-        </a>
-      ))}
-    </div>
+    <Container>
+      <Title>Speakers</Title>
+      <div {...containerStyle}>
+        {speakers.map(speaker => (
+          <a href={`/speakers/${speaker.node.slug}`} {...speakerStyle}>
+            <Img
+              resolutions={speaker.node.photo.resolutions}
+              className={image}
+            />
+            <Title isSize={4}>{speaker.node.name}</Title>
+            <Subtitle isSize={5} hasTextAlign="centered">{speaker.node.title}</Subtitle>
+          </a>
+        ))}
+      </div>
+    </Container>
   );
 }
 AllSpeakers.propTypes = {
@@ -68,7 +101,8 @@ const link = css({
 });
 function EmptySpeaker() {
   return (
-    <div>
+    <Container hasTextAlign="centered">
+      <Title>Speakers</Title>
       <Image
         src={Podium}
         style={{
@@ -84,7 +118,7 @@ function EmptySpeaker() {
           contact us
         </a>.
       </Content>
-    </div>
+    </Container>
   );
 }
 
