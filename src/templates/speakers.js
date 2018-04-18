@@ -5,6 +5,7 @@ import Img from 'gatsby-image';
 import { css, after } from 'glamor';
 import { Container, Content, Title, Hero, HeroBody, Subtitle } from 'bloomer';
 import Markdown from 'react-markdown';
+import MdLink from '../components/MdLink';
 import RegistrationButton from '../components/Buttons/Registration.js';
 
 const profile = css({
@@ -41,7 +42,14 @@ function SpeakerTemplate(props) {
               resolutions={speaker.photo.resolutions}
               {...profile}
             />
-            <Markdown source={speaker.blurb} {...mdContent} className={mdContent} />
+            <Markdown
+              source={speaker.blurb}
+              {...mdContent}
+              renderers={{
+                link: MdLink,
+              }}
+              className={mdContent}
+            />
           </Content>
           <RegistrationButton />
           <br />

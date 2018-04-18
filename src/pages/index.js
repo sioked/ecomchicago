@@ -125,6 +125,9 @@ export const query = graphql`
       }
       locationTitle
       locationText
+      sponsorPackageFile {
+        url
+      }
     }
   }
 `;
@@ -187,6 +190,7 @@ IndexPage.propTypes = {
       ),
       locationTitle: PropTypes.string,
       locationText: PropTypes.string,
+      sponsorPackageFile: PropTypes.string,
     }),
     datoCmsSite: PropTypes.shape({
       faviconMetaTags: PropTypes.shape({

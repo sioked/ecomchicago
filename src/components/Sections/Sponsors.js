@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import { css } from 'glamor';
-import { Hero, HeroBody, Container, Title } from 'bloomer';
+import { Hero, HeroBody, Container, Title, Subtitle } from 'bloomer';
 
 const logo = css({
   width: '250px',
@@ -23,6 +23,7 @@ const flexLogo = css({
 
 function Sponsors({ ...props }) {
   const sponsors = props.data.allDatoCmsSponsor.edges;
+  const packageUrl = props.data.datoCmsIndexPage.sponsorPackageFile.url;
   return (
     <Hero id="sponsors" isSize="medium">
       <HeroBody>
@@ -34,7 +35,7 @@ function Sponsors({ ...props }) {
                 <a
                   href={sponsor.node.url}
                   alt={sponsor.node.name}
-                  target="_new"
+                  target="_blank"
                   {...flexLogo}
                 >
                   <Img sizes={sponsor.node.logo.sizes} />
@@ -42,6 +43,11 @@ function Sponsors({ ...props }) {
               </div>
             ))}
           </div>
+          <Subtitle>
+            Sponsorships are available! Download and review our{' '}
+            <a href={packageUrl} target="_blank">sponsorship packages</a>{' '}
+            and <a href="/contact">contact us</a> to get started.
+          </Subtitle>
         </Container>
       </HeroBody>
     </Hero>
@@ -60,6 +66,11 @@ Sponsors.propTypes = {
           }),
         }),
       ),
+    }),
+    datoCmsIndexPage: PropTypes.shape({
+      sponsorPackageFile: PropTypes.shape({
+        url: PropTypes.string,
+      }),
     }),
   }).isRequired,
 };

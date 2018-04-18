@@ -4,6 +4,7 @@ import Link from 'gatsby-link';
 import { css, after } from 'glamor';
 import { Section, Container, Content, Title, Hero, HeroBody } from 'bloomer';
 import Markdown from 'react-markdown';
+import MdLink from '../components/MdLink';
 import RegistrationButton from '../components/Buttons/Registration.js';
 
 const clearFloat = css(
@@ -19,6 +20,7 @@ const mdContent = css({
     'text-decoration': 'underline',
   },
 });
+
 
 function PageTemplate(props) {
   const page = props.data.datoCmsPage;
@@ -49,6 +51,9 @@ function PageTemplate(props) {
             <Markdown
               source={page.content}
               {...mdContent}
+              renderers={{
+                link: MdLink,
+              }}
               className={mdContent}
             />
           </Content>
