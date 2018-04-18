@@ -2,14 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { HelmetDatoCms } from 'gatsby-source-datocms';
-import Splash from '../components/Sections/Splash.js';
-import Details from '../components/Sections/Details.js';
-import What from '../components/Sections/What.js';
-import Speakers from '../components/Sections/Speakers.js';
-import Sponsors from '../components/Sections/Sponsors.js';
-import content from '../constants/content.js';
-import SplashImageType from '../proptypes/splashImage.js';
-import ImageResolutions from '../proptypes/imageResolutions.js';
+import Splash from '../components/Sections/Splash';
+import Details from '../components/Sections/Details';
+import What from '../components/Sections/What';
+import Speakers from '../components/Sections/Speakers';
+import Sponsors from '../components/Sections/Sponsors';
+import Location from '../components/Sections/Location';
+import content from '../constants/content';
+import SplashImageType from '../proptypes/splashImage';
+import ImageResolutions from '../proptypes/imageResolutions';
 
 const IndexPage = ({ data }) => (
   <div>
@@ -40,6 +41,10 @@ const IndexPage = ({ data }) => (
     />
     <Speakers data={data} />
     <Sponsors data={data} />
+    <Location
+      title={data.datoCmsIndexPage.locationTitle}
+      text={data.datoCmsIndexPage.locationText}
+    />
   </div>
 );
 
@@ -118,6 +123,8 @@ export const query = graphql`
         title
         text
       }
+      locationTitle
+      locationText
     }
   }
 `;
@@ -178,6 +185,8 @@ IndexPage.propTypes = {
           text: PropTypes.string,
         }),
       ),
+      locationTitle: PropTypes.string,
+      locationText: PropTypes.string,
     }),
     datoCmsSite: PropTypes.shape({
       faviconMetaTags: PropTypes.shape({

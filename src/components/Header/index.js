@@ -50,6 +50,9 @@ const Header = compose(
           <NavbarItem href="/#sponsors" isTab>
             Sponsors
           </NavbarItem>
+          <NavbarItem href="/travel" isTab>
+            Travel
+          </NavbarItem>
           <NavbarItem href="/contact" isTab>
             Contact Us
           </NavbarItem>

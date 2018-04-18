@@ -44,6 +44,7 @@ function SpeakerTemplate(props) {
             <Markdown source={speaker.blurb} {...mdContent} className={mdContent} />
           </Content>
           <RegistrationButton />
+          <br />
           <Link to="/">&#8678; Go Back</Link>
         </Container>
       </HeroBody>
