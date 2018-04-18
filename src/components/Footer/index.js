@@ -29,6 +29,9 @@ function Footer() {
                     <a href="/#sponsors">Sponsors</a>
                   </li>
                   <li>
+                    <a href="/travel">Travel</a>
+                  </li>
+                  <li>
                     <a href="/contact">Contact</a>
                   </li>
                 </ul>
