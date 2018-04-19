@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Link({ ...props }) {
+function MdLink({ ...props }) {
   if (/^http/.test(props.href)) {
     return (
       <a href={props.href} target="_blank" {...props}>
@@ -16,11 +16,11 @@ function Link({ ...props }) {
   );
 }
 
-Link.defaultProps = {};
+MdLink.defaultProps = {};
 
-Link.propTypes = {
+MdLink.propTypes = {
   href: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 };
 
-export default Link;
+export default MdLink;
