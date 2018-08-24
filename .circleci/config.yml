@@ -1,0 +1,81 @@
+version: 2
+jobs:
+  build_client:
+    docker: 
+      - image: circleci/node:10
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys: 
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+      - run: sudo npm install -g yarn
+      - run: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run: yarn run build
+  
+  deploy_dev:
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/repo
+    environment:
+      PATH_TO_BUILD: ./public
+      SURGE_DOMAIN_DEV: ecomchicago-dev.surge.sh
+      SURGE_DOMAIN_2017: 2017.ecomchicago.com
+      SURGE_DOMAIN_PROD: https://www.ecomchicago.com
+    steps:
+      - checkout
+      - restore_cache:
+          keys: 
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+      - run: NODE_ENV=production DATOCMS_PREVIEW_ENABLED=true GATSBY_SPEAKERS_DISABLED= yarn run build
+      - run: ./node_modules/.bin/surge --project $PATH_TO_BUILD --domain $SURGE_DOMAIN_DEV
+  
+  deploy_prod:
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/repo
+    environment:
+      PATH_TO_BUILD: ./public
+      SURGE_DOMAIN_DEV: ecomchicago-dev.surge.sh
+      SURGE_DOMAIN_2017: 2017.ecomchicago.com
+      SURGE_DOMAIN_PROD: https://www.ecomchicago.com
+    steps:
+      - checkout
+      - restore_cache:
+          keys: 
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+      - run: NODE_ENV=production yarn run build
+      - run: ./node_modules/.bin/surge GATSBY_SPEAKERS_DISABLED= --project $PATH_TO_BUILD --domain $SURGE_DOMAIN_PROD
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build_client
+      - deploy_dev:
+        requires:
+          - build_client
+        filters:
+          branches:
+            only: develop
+      - deploy_prod:
+        requires:
+          - build_client
+        filters:
+          branches:
+            only: master
+
+notify:
+  webhooks:
+    - url: https://webhooks.datocms.com/45f01439fa5745bf0acd/deploy-results
+    - url: https://webhooks.datocms.com/d248f59e333d0bfd7f13/deploy-results

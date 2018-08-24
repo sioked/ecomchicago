@@ -102,7 +102,7 @@ export const query = graphql`
         ...GatsbyDatoCmsSeoMetaTags
       }
       splashImage {
-        resize(width: 1200, imgixParams: { blur: 5, auto: "compress" }) {
+        fixed(width: 1200, imgixParams: { blur: 5, auto: "compress" }) {
           src
         }
       }

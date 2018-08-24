@@ -11,7 +11,7 @@ const Splash = ({ splashImage }) => (
     isSize="medium"
     style={{
       backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0,0,0,0.5)), url(${
-        splashImage.resize.src
+        splashImage.fixed.src
       })`,
       backgroundPosition: '50%',
       backgroundSize: 'cover',

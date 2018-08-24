@@ -32,7 +32,7 @@ function PageTemplate(props) {
         className="is-bold"
         style={{
           backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5) ), url(${
-            page.splashImage.resize.src
+            page.splashImage.fixed.src
           })`,
           backgroundPosition: '50%',
           backgroundSize: 'cover',
@@ -85,7 +85,7 @@ export const pageQuery = graphql`
       title
       content
       splashImage {
-        resize(width: 1200, imgixParams: { blur: 5, auto: "compress" }) {
+        fixed(width: 1200, imgixParams: { blur: 5, auto: "compress" }) {
           src
         }
       }
