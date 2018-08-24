@@ -63,17 +63,17 @@ workflows:
     jobs:
       - build_client
       - deploy_dev:
-        requires:
-          - build_client
-        filters:
-          branches:
-            only: develop
+          requires:
+            - build_client
+          filters:
+            branches:
+              only: develop
       - deploy_prod:
-        requires:
-          - build_client
-        filters:
-          branches:
-            only: master
+          requires:
+            - build_client
+          filters:
+            branches:
+              only: master
 
 notify:
   webhooks:
