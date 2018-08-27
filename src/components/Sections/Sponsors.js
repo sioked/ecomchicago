@@ -10,6 +10,9 @@ const logo = css({
   alignItems: 'center',
   margin: '30px 0 30px 50px',
 });
+const logoLarge = css({
+  width: '450px',
+});
 
 const logoContainer = css({
   display: 'flex',
@@ -21,31 +24,81 @@ const flexLogo = css({
   flex: 1,
 });
 
+function Sponsor({ url, name, sponsorLogo, size }) {
+  const sizeClass = size === 'large' ? logoLarge : '';
+  return (
+    <div {...logo} {...sizeClass}>
+      <a
+        href={url}
+        alt={name}
+        target="_blank"
+        rel="noopener noreferrer"
+        {...flexLogo}
+      >
+        <Img sizes={sponsorLogo.sizes} />
+      </a>
+    </div>
+  );
+}
+
+Sponsor.propTypes = {
+  url: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  sponsorLogo: PropTypes.shape({
+    sizes: PropTypes.arrayOf(PropTypes.string),
+  }).isRequired,
+  size: PropTypes.oneOf('large', 'medium'),
+};
+Sponsor.defaultProps = {
+  name: '',
+  size: 'medium',
+};
+
 function Sponsors({ ...props }) {
   const sponsors = props.data.allDatoCmsSponsor.edges;
   const packageUrl = props.data.datoCmsIndexPage.sponsorPackageFile.url;
+  const platinum = sponsors.filter(
+    sponsor =>
+      sponsor.node.sponsorshiptype &&
+      sponsor.node.sponsorshiptype.name === 'Platinum',
+  );
+  const nonPlatinum = sponsors.filter(
+    sponsor =>
+      !sponsor.node.sponsorshiptype ||
+      sponsor.node.sponsorshiptype.name !== 'Platinum',
+  );
+  console.log(sponsors);
   return (
     <Hero id="sponsors" isSize="medium">
       <HeroBody>
         <Container>
-          <Title>Sponsors</Title>
+          <Title>Platinum Sponsors</Title>
           <div {...logoContainer}>
-            {sponsors.map(sponsor => (
-              <div {...logo}>
-                <a
-                  href={sponsor.node.url}
-                  alt={sponsor.node.name}
-                  target="_blank"
-                  {...flexLogo}
-                >
-                  <Img sizes={sponsor.node.logo.sizes} />
-                </a>
-              </div>
+            {platinum.map(sponsor => (
+              <Sponsor
+                key={sponsor.url}
+                {...sponsor.node}
+                sponsorLogo={sponsor.node.logo}
+                size="large"
+              />
+            ))}
+          </div>
+          <hr />
+          <Title>Gold, Silver, & Bronze Sponsors</Title>
+          <div {...logoContainer}>
+            {nonPlatinum.map(sponsor => (
+              <Sponsor
+                key={sponsor.url}
+                {...sponsor.node}
+                sponsorLogo={sponsor.node.logo}
+              />
             ))}
           </div>
           <Subtitle>
             Sponsorships are available! Download and review our{' '}
-            <a href={packageUrl} target="_blank">sponsorship packages</a>{' '}
+            <a href={packageUrl} target="_blank" rel="noopener noreferrer">
+              sponsorship packages
+            </a>{' '}
             and <a href="/contact">contact us</a> to get started.
           </Subtitle>
         </Container>

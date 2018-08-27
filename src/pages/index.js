@@ -85,9 +85,12 @@ export const query = graphql`
           url
           name
           logo {
-            sizes(maxWidth: 200) {
+            sizes(maxWidth: 400) {
               ...GatsbyDatoCmsSizes
             }
+          }
+          sponsorshiptype {
+            name
           }
         }
       }
@@ -159,6 +162,9 @@ IndexPage.propTypes = {
             name: PropTypes.string,
             logo: PropTypes.shape({
               sizes: ImageResolutions,
+            }),
+            sponsorshiptype: PropTypes.shape({
+              name: PropTypes.string,
             }),
           }),
         }),
