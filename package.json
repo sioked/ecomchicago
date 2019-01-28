@@ -56,5 +56,9 @@
     "eslint-plugin-react": "^7.11.1",
     "prettier": "^1.14.2",
     "surge": "^0.20.1"
+  },
+  "resolutions": {
+    "node-gyp": "^3.7.0"
   }
+
 }
