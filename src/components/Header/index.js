@@ -59,6 +59,9 @@ const Header = compose(
           <NavbarItem hasDropdown isHoverable>
             <NavbarLink>Previous Events</NavbarLink>
             <NavbarDropdown>
+              <NavbarItem href="http://2018.ecomchicago.com">
+                ecomChicago 2018
+              </NavbarItem>
               <NavbarItem href="http://2017.ecomchicago.com">
                 ecomChicago 2017
               </NavbarItem>

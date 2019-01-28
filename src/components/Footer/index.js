@@ -44,6 +44,9 @@ function Footer() {
                   <li>
                     <a href="http://2017.ecomchicago.com">ecomChicago 2017</a>
                   </li>
+                  <li>
+                    <a href="http://2018.ecomchicago.com">ecomChicago 2018</a>
+                  </li>
                 </ul>
               </Column>
             </Columns>
