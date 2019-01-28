@@ -15,7 +15,7 @@ function Footer() {
       <Container>
         <Columns>
           <Column isSize="1/2">
-            <Title isSize="6">&copy; ecomChicago 2018</Title>
+            <Title isSize="6">&copy; ecomChicago 2019</Title>
             <Columns>
               <Column isSize="1/2">
                 <ul className="is-size-6">

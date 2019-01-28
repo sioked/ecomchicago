@@ -23,7 +23,7 @@ const Splash = ({ splashImage }) => (
       <Container hasTextAlign="centered">
         <Image
           src={logoLight}
-          alt="ecomChicago 2018"
+          alt="ecomChicago 2019"
           style={{
             maxWidth: '400px',
             margin: '0 auto',
@@ -36,7 +36,7 @@ const Splash = ({ splashImage }) => (
           }}
           isSpaced
         >
-          2018
+          2019
         </Title>
         <Subtitle
           isSize={4}
