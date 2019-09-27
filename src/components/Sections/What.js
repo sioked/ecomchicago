@@ -10,6 +10,7 @@ import {
   Title,
 } from 'bloomer';
 import Img from 'gatsby-image';
+import Markdown from 'react-markdown';
 import ImageResolutions from '../../proptypes/imageResolutions.js';
 
 function What({ image, content }) {
@@ -22,7 +23,7 @@ function What({ image, content }) {
               {content.map(contentItem => (
                 <Notification isColor="primary">
                   <Title>{contentItem.title}</Title>
-                  {contentItem.text}
+                  <Markdown source={contentItem.text} />
                 </Notification>
               ))}
             </Column>
