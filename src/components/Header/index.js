@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
+
 import {
   Navbar,
   NavbarBrand,
@@ -22,7 +23,7 @@ const Header = compose(
   withHandlers({
     toggleNav: ({ setIsOpen }) => () => setIsOpen(n => !n),
   }),
-)(({ isOpen, toggleNav }) => (
+)(({ isOpen, toggleNav, data }) => (
   <Container>
     <Navbar style={{}}>
       <NavbarBrand className="navbar-brand">
@@ -47,8 +48,13 @@ const Header = compose(
           <NavbarItem href="/#speakers" isTab>
             Speakers
           </NavbarItem>
-          <NavbarItem href="/#sponsors" isTab>
-            Sponsors
+          <NavbarItem href="/#sponsors" isTab hasDropdown isHoverable>
+            <NavbarLink>Sponsors</NavbarLink>
+            <NavbarDropdown>
+              <NavbarItem href="http://2019.ecomchicago.com">
+                Become a Sponsor
+              </NavbarItem>
+            </NavbarDropdown>
           </NavbarItem>
           <NavbarItem href="/travel" isTab>
             Travel
@@ -56,22 +62,8 @@ const Header = compose(
           <NavbarItem href="/contact" isTab>
             Contact Us
           </NavbarItem>
-          <NavbarItem hasDropdown isHoverable>
-            <NavbarLink>Previous Events</NavbarLink>
-            <NavbarDropdown>
-              <NavbarItem href="http://2019.ecomchicago.com">
-                ecomChicago 2019
-              </NavbarItem>
-              <NavbarItem href="http://2018.ecomchicago.com">
-                ecomChicago 2018
-              </NavbarItem>
-              <NavbarItem href="http://2017.ecomchicago.com">
-                ecomChicago 2017
-              </NavbarItem>
-              <NavbarItem href="http://2016.ecomchicago.com">
-                ecomChicago 2016
-              </NavbarItem>
-            </NavbarDropdown>
+          <NavbarItem href="https://www.facebook.com/groups/eComChicago/">
+            Find us on Facebook
           </NavbarItem>
         </NavbarStart>
         <NavbarEnd>
