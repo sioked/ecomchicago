@@ -8,6 +8,7 @@ import {
   Title,
   Content,
 } from 'bloomer';
+import content from '../../constants/content';
 
 function Footer() {
   return (
@@ -15,7 +16,7 @@ function Footer() {
       <Container>
         <Columns>
           <Column isSize="1/2">
-            <Title isSize="6">&copy; ecomChicago 2019</Title>
+            <Title isSize="6">{content.footerTitle}</Title>
             <Columns>
               <Column isSize="1/2">
                 <ul className="is-size-6">
@@ -46,6 +47,9 @@ function Footer() {
                   </li>
                   <li>
                     <a href="http://2018.ecomchicago.com">ecomChicago 2018</a>
+                  </li>
+                  <li>
+                    <a href="http://2019.ecomchicago.com">ecomChicago 2019</a>
                   </li>
                 </ul>
               </Column>

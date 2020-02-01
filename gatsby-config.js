@@ -3,7 +3,7 @@ require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title:
-      'ecomChicago 2019 | A 3-day Conference for Online Entrepreners and Store Owners',
+      'ecomChicago 2020 | A 3-day Conference for Online Entrepreners and Store Owners',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

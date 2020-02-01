@@ -36,7 +36,7 @@ const Splash = ({ splashImage }) => (
           }}
           isSpaced
         >
-          2019
+          {content.year}
         </Title>
         <Subtitle
           isSize={4}
