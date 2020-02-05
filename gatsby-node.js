@@ -1,13 +1,13 @@
 /**
- * Implement Gatsby's Node APIs in this file.
+</Layou</Layout>t> * Implement Gatsby's Node APIs in this file.
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 const path = require('path');
 const _ = require('lodash');
 
-exports.createPages = async ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
 
   const speakerTemplate = path.resolve('./src/templates/speakers.js');
   const pageTemplate = path.resolve('./src/templates/page.js');
@@ -21,7 +21,6 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
             title
             blurb
             photo {
-              id
               resolutions(width: 200) {
                 width
                 height

@@ -35,7 +35,7 @@ function Sponsor({ url, name, sponsorLogo, size }) {
         rel="noopener noreferrer"
         {...flexLogo}
       >
-        <Img sizes={sponsorLogo.sizes} />
+        <Img fluid={sponsorLogo.sizes} />
       </a>
     </div>
   );

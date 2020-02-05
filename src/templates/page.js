@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import { css, after } from 'glamor';
 import { Section, Container, Content, Title, Hero, HeroBody } from 'bloomer';
 import Markdown from 'react-markdown';
 import MdLink from '../components/MdLink';
 import RegistrationButton from '../components/Buttons/Registration.js';
+import Layout from '../components/layout';
 
 const clearFloat = css(
   after({
@@ -21,48 +22,47 @@ const mdContent = css({
   },
 });
 
-
 function PageTemplate(props) {
   const page = props.data.datoCmsPage;
   return (
-    <div>
-      <Hero
-        isSize="medium"
-        isColor="info"
-        className="is-bold"
-        style={{
-          backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5) ), url(${
-            page.splashImage.fixed.src
-          })`,
-          backgroundPosition: '50%',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-        }}
-      >
-        <HeroBody>
+    <Layout>
+      <div>
+        <Hero
+          isSize="medium"
+          isColor="info"
+          className="is-bold"
+          style={{
+            backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5) ), url(${page.splashImage.fixed.src})`,
+            backgroundPosition: '50%',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+          }}
+        >
+          <HeroBody>
+            <Container>
+              <Title>{page.title}</Title>
+            </Container>
+          </HeroBody>
+        </Hero>
+        <Section>
           <Container>
-            <Title>{page.title}</Title>
+            <Content {...clearFloat}>
+              <Markdown
+                source={page.content}
+                {...mdContent}
+                renderers={{
+                  link: MdLink,
+                }}
+                className={mdContent}
+              />
+            </Content>
+            <RegistrationButton />
+            <br />
+            <Link to="/">&#8678; Go Back</Link>
           </Container>
-        </HeroBody>
-      </Hero>
-      <Section>
-        <Container>
-          <Content {...clearFloat}>
-            <Markdown
-              source={page.content}
-              {...mdContent}
-              renderers={{
-                link: MdLink,
-              }}
-              className={mdContent}
-            />
-          </Content>
-          <RegistrationButton />
-          <br />
-          <Link to="/">&#8678; Go Back</Link>
-        </Container>
-      </Section>
-    </div>
+        </Section>
+      </div>
+    </Layout>
   );
 }
 PageTemplate.propTypes = {

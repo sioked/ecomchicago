@@ -69,7 +69,7 @@ function AllSpeakers({ edges: speakers }) {
         {speakers.map(speaker => (
           <a href={`/speakers/${speaker.node.slug}`} {...speakerStyle}>
             <Img
-              resolutions={speaker.node.photo.resolutions}
+              fixed={speaker.node.photo.resolutions}
               className={image}
             />
             <Title isSize={4}>{speaker.node.name}</Title>

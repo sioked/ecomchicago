@@ -28,7 +28,7 @@ function What({ image, content }) {
               ))}
             </Column>
             <Column isSize={6}>
-              <Img sizes={image.sizes} />
+              <Img fluid={image.sizes} />
             </Column>
           </Columns>
         </Container>

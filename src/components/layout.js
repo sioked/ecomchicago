@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from './Header';
+import Footer from './Footer';
 import content from '../constants/content.js';
-import './index.scss';
+import './layout.scss';
 
 const TemplateWrapper = ({ children }) => (
   <div>
@@ -17,7 +17,7 @@ const TemplateWrapper = ({ children }) => (
       ]}
     />
     <Header />
-    <div>{children()}</div>
+    <div>{children}</div>
     <Footer />
   </div>
 );

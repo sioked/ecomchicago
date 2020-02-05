@@ -67,7 +67,7 @@ function Details({ text, title, image }) {
               </Section>
             </Column>
             <Column isSize={4}>
-              <Img sizes={image.sizes} />
+              <Img fluid={image.sizes} />
             </Column>
           </Columns>
         </Container>

@@ -1,8 +1,13 @@
 import React from 'react';
 import ContactPage from '../components/ContactPage';
+import Layout from '../components/Layout';
 
 function Contact() {
-  return <ContactPage />;
+  return (
+    <Layout>
+      <ContactPage />
+    </Layout>
+  );
 }
 
 Contact.defaultProps = {};

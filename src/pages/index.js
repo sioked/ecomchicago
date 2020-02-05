@@ -11,41 +11,44 @@ import Location from '../components/Sections/Location';
 import content from '../constants/content';
 import SplashImageType from '../proptypes/splashImage';
 import ImageResolutions from '../proptypes/imageResolutions';
+import Layout from '../components/layout';
 
 const IndexPage = ({ data }) => (
-  <div>
-    <Helmet
-      title={content.siteTitle}
-      meta={[
-        {
-          name: 'attribution',
-          content:
-            'Background patterns from Subtle Patterns (https://www.toptal.com/designers/subtlepatterns)',
-        },
-      ]}
-    />
-    <HelmetDatoCms
-      seo={data.datoCmsIndexPage.seoMetaTags}
-      favicon={data.datoCmsSite.faviconMetaTags}
-    />
-    {/*  */}
-    <Splash splashImage={data.datoCmsIndexPage.splashImage} />
-    <Details
-      title={data.datoCmsIndexPage.detailsTitle}
-      text={data.datoCmsIndexPage.detailsText}
-      image={data.datoCmsIndexPage.detailsImage}
-    />
-    <What
-      image={data.datoCmsIndexPage.whatImage}
-      content={data.datoCmsIndexPage.whatData}
-    />
-    <Speakers data={data} />
-    <Sponsors data={data} />
-    <Location
-      title={data.datoCmsIndexPage.locationTitle}
-      text={data.datoCmsIndexPage.locationText}
-    />
-  </div>
+  <Layout>
+    <div>
+      <Helmet
+        title={content.siteTitle}
+        meta={[
+          {
+            name: 'attribution',
+            content:
+              'Background patterns from Subtle Patterns (https://www.toptal.com/designers/subtlepatterns)',
+          },
+        ]}
+      />
+      <HelmetDatoCms
+        seo={data.datoCmsIndexPage.seoMetaTags}
+        favicon={data.datoCmsSite.faviconMetaTags}
+      />
+      {/*  */}
+      <Splash splashImage={data.datoCmsIndexPage.splashImage} />
+      <Details
+        title={data.datoCmsIndexPage.detailsTitle}
+        text={data.datoCmsIndexPage.detailsText}
+        image={data.datoCmsIndexPage.detailsImage}
+      />
+      <What
+        image={data.datoCmsIndexPage.whatImage}
+        content={data.datoCmsIndexPage.whatData}
+      />
+      <Speakers data={data} />
+      <Sponsors data={data} />
+      <Location
+        title={data.datoCmsIndexPage.locationTitle}
+        text={data.datoCmsIndexPage.locationText}
+      />
+    </div>
+  </Layout>
 );
 
 export const query = graphql`
@@ -59,7 +62,6 @@ export const query = graphql`
           title
           blurb
           photo {
-            id
             resolutions(
               width: 200
               height: 200
@@ -180,6 +182,7 @@ IndexPage.propTypes = {
         ),
       }),
       detailsText: PropTypes.string,
+      detailsTitle: PropTypes.string,
       splashImage: SplashImageType.isRequired,
       detailsImage: PropTypes.shape({
         resolutions: ImageResolutions,

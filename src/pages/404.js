@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import { Hero, HeroBody, Container, Title, Subtitle } from 'bloomer';
 import { css } from 'glamor';
 

@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { css, after } from 'glamor';
 import { Container, Content, Title, Hero, HeroBody, Subtitle } from 'bloomer';
 import Markdown from 'react-markdown';
 import MdLink from '../components/MdLink';
 import RegistrationButton from '../components/Buttons/Registration.js';
+import Layout from '../components/layout';
 
 const profile = css({
   display: 'inline-block',
@@ -30,33 +31,35 @@ const mdContent = css({
 function SpeakerTemplate(props) {
   const speaker = props.data.datoCmsSpeaker;
   return (
-    <Hero isSize="medium" isColor="info" className="is-bold">
-      <HeroBody>
-        <Container>
-          <Title>{speaker.name}</Title>
-          <Subtitle>{speaker.title}</Subtitle>
-          <Content {...clearFloat}>
-            <Img
-              className={`${profile} bio-image`}
-              alt={speaker.name}
-              resolutions={speaker.photo.resolutions}
-              {...profile}
-            />
-            <Markdown
-              source={speaker.blurb}
-              {...mdContent}
-              renderers={{
-                link: MdLink,
-              }}
-              className={mdContent}
-            />
-          </Content>
-          <RegistrationButton />
-          <br />
-          <Link to="/">&#8678; Go Back</Link>
-        </Container>
-      </HeroBody>
-    </Hero>
+    <Layout>
+      <Hero isSize="medium" isColor="info" className="is-bold">
+        <HeroBody>
+          <Container>
+            <Title>{speaker.name}</Title>
+            <Subtitle>{speaker.title}</Subtitle>
+            <Content {...clearFloat}>
+              <Img
+                className={`${profile} bio-image`}
+                alt={speaker.name}
+                fixed={speaker.photo.resolutions}
+                {...profile}
+              />
+              <Markdown
+                source={speaker.blurb}
+                {...mdContent}
+                renderers={{
+                  link: MdLink,
+                }}
+                className={mdContent}
+              />
+            </Content>
+            <RegistrationButton />
+            <br />
+            <Link to="/">&#8678; Go Back</Link>
+          </Container>
+        </HeroBody>
+      </Hero>
+    </Layout>
   );
 }
 SpeakerTemplate.propTypes = {
@@ -81,7 +84,6 @@ export const pageQuery = graphql`
       title
       blurb
       photo {
-        id
         resolutions(
           width: 250
           height: 250
