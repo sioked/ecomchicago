@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import { css, after } from 'glamor';
 import { Section, Container, Content, Title, Hero, HeroBody } from 'bloomer';
 import Markdown from 'react-markdown';

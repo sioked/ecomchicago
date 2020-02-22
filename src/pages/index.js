@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
 import { HelmetDatoCms } from 'gatsby-source-datocms';
 import Splash from '../components/Sections/Splash';
 import Details from '../components/Sections/Details';

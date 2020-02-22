@@ -61,8 +61,8 @@ const Header = compose(
             <NavbarItem href="/#speakers" isTab>
               Speakers
             </NavbarItem>
-            <NavbarItem href="/#sponsors" isTab hasDropdown isHoverable>
-              <NavbarLink>Sponsors</NavbarLink>
+            <NavbarItem isTab hasDropdown isHoverable>
+              <NavbarLink href="/#sponsors">Sponsors</NavbarLink>
               <NavbarDropdown>
                 <NavbarItem href={data.datoCmsIndexPage.sponsorPackageFile.url}>
                   Become a Sponsor
