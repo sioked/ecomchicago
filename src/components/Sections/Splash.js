@@ -23,7 +23,7 @@ const Splash = ({ splashImage }) => (
       <Container hasTextAlign="centered">
         <Image
           src={logoLight}
-          alt="ecomChicago 2019"
+          alt="ecomChicago 2020"
           style={{
             maxWidth: '400px',
             margin: '0 auto',
