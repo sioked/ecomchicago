@@ -23,7 +23,7 @@ const Header = compose(
   withHandlers({
     toggleNav: ({ setIsOpen }) => () => setIsOpen(n => !n),
   }),
-)(({ isOpen, toggleNav, data }) => (
+)(({ isOpen, toggleNav }) => (
   <Container>
     <Navbar style={{}}>
       <NavbarBrand className="navbar-brand">
