@@ -19,7 +19,7 @@
     "gatsby-source-datocms": "^2.1.23",
     "gatsby-source-filesystem": "^2.1.48",
     "glamor": "^2.20.40",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.21",
     "node-gyp": "^6.1.0",
     "node-sass": "^4.13.1",
     "object-fit-images": "^3.2.4",
