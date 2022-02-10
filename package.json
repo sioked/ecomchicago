@@ -21,7 +21,7 @@
     "glamor": "^2.20.40",
     "lodash": "^4.17.13",
     "node-gyp": "^6.1.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "object-fit-images": "^3.2.4",
     "query-string": "^6.1.0",
     "react": "^16.12.0",
